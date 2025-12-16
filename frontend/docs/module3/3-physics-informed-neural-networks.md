@@ -1,5 +1,5 @@
 ---
-id: chapter10
+id: 3-physics-informed-neural-networks
 title: Physics-Informed Neural Networks
 sidebar_label: Physics-Informed Neural Networks
 ---

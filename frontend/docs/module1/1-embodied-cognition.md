@@ -1,5 +1,5 @@
 ---
-id: chapter3
+id: 1-embodied-cognition
 title: Embodied Cognition
 sidebar_label: Embodied Cognition
 ---

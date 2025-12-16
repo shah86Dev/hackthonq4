@@ -1,5 +1,5 @@
 ---
-id: chapter8
+id: 2-human-robot-interaction
 title: Human-Robot Interaction
 sidebar_label: Human-Robot Interaction
 ---

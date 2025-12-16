@@ -5,11 +5,6 @@ const sidebars = {
   textbookSidebar: [
     {
       type: 'category',
-      label: 'Getting Started',
-      items: ['intro'],
-    },
-    {
-      type: 'category',
       label: 'Module 1: Foundations of Physical AI',
       items: [
         'module1/1-introduction-to-physical-ai',

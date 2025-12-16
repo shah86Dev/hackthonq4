@@ -1,5 +1,5 @@
 ---
-id: chapter2
+id: 1-sensorimotor-coordination
 title: Sensorimotor Coordination
 sidebar_label: Sensorimotor Coordination
 ---

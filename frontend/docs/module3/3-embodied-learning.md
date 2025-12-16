@@ -1,5 +1,5 @@
 ---
-id: chapter11
+id: 3-embodied-learning
 title: Embodied Learning
 sidebar_label: Embodied Learning
 ---

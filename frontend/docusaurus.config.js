@@ -13,17 +13,17 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-gh-pages-url.github.io',
+  url: 'https://your-username.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'your-org', // Usually your GitHub org/user name.
+  organizationName: 'your-username', // Usually your GitHub org/user name.
   projectName: 'physical-ai-textbook', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -31,7 +31,7 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'ur'],
+    locales: ['en'],
   },
 
   presets: [
@@ -64,6 +64,8 @@ const config = {
         logo: {
           alt: 'Physical AI & Humanoid Robotics Logo',
           src: 'img/logo.svg',
+          href: '/',
+          target: '_self',
         },
         items: [
           {
@@ -72,12 +74,23 @@ const config = {
             position: 'left',
             label: 'Textbook',
           },
-          {to: '/chapters', label: 'Chapters', position: 'left'},
-          {to: '/labs', label: 'Labs', position: 'left'},
-          {to: '/quizzes', label: 'Quizzes', position: 'left'},
           {
-            type: 'localeDropdown',
-            position: 'right',
+            type: 'docSidebar',
+            sidebarId: 'textbookSidebar',
+            position: 'left',
+            label: 'Chapters',
+          },
+          {
+            type: 'doc',
+            docId: 'lab-manual',
+            position: 'left',
+            label: 'Labs',
+          },
+          {
+            type: 'doc',
+            docId: 'assessments/assessments',
+            position: 'left',
+            label: 'Quizzes',
           },
           {
             href: 'https://github.com/your-username/physical-ai-textbook',
@@ -98,11 +111,11 @@ const config = {
               },
               {
                 label: 'Labs',
-                to: '/labs',
+                to: '/docs/lab-manual',
               },
               {
                 label: 'Quizzes',
-                to: '/quizzes',
+                to: '/docs/assessments/assessments',
               },
             ],
           },
@@ -133,7 +146,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Textbook. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Textbook. Built With Claude.`,
       },
       prism: {
         theme: prismThemes.github,

@@ -1,5 +1,5 @@
 ---
-id: chapter6
+id: 2-locomotion-and-gait-control
 title: Locomotion and Gait Control
 sidebar_label: Locomotion and Gait Control
 ---

@@ -1,0 +1,184 @@
+.heroSection {
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 997px) {
+  .heroContent {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.textContent {
+  flex: 1;
+  min-width: 300px;
+}
+
+.mainTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-heading-color);
+}
+
+@media (min-width: 997px) {
+  .mainTitle {
+    font-size: 3rem;
+  }
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--ifm-color-primary);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.description {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.versionInfo {
+  margin: 1rem 0;
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.bookDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.visualContent {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bookCoverPlaceholder {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 3/4;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bookCoverPlaceholder:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.coverArt {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.roboticElements {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.3) 0%, transparent 40%),
+    radial-gradient(circle at 70% 70%, rgba(255,255,255,0.2) 0%, transparent 40%);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.aiPatterns {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  background:
+    conic-gradient(from 0deg, transparent, rgba(255,255,255,0.1), transparent 360deg);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: rotate 10s linear infinite;
+}
+
+.coverLabel {
+  position: absolute;
+  bottom: 1rem;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 0 1rem;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Course Structure Styling */
+.courseStructure {
+  margin-top: 3rem;
+}
+
+.moduleList {
+  margin: 1.5rem 0;
+}
+
+.moduleItem {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  border-left: 4px solid var(--ifm-color-primary);
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: 0 8px 8px 0;
+}
+
+.moduleTitle {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary);
+}
+
+.moduleLinks {
+  list-style: none;
+  padding-left: 0;
+}
+
+.moduleLinks li {
+  margin-bottom: 0.5rem;
+}
+
+.moduleLinks li::before {
+  content: "→ ";
+  color: var(--ifm-color-primary);
+  margin-right: 0.5rem;
+}

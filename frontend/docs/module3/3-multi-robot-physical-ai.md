@@ -1,5 +1,5 @@
 ---
-id: chapter12
+id: 3-multi-robot-physical-ai
 title: Multi-Robot Physical AI
 sidebar_label: Multi-Robot Physical AI
 ---

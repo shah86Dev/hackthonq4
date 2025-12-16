@@ -1,5 +1,5 @@
 ---
-id: chapter4
+id: 1-learning-in-physical-systems
 title: Learning in Physical Systems
 sidebar_label: Learning in Physical Systems
 ---

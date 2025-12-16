@@ -1,5 +1,5 @@
 ---
-id: chapter15
+id: 4-safety-and-ethics-in-physical-ai
 title: Safety and Ethics in Physical AI
 sidebar_label: Safety and Ethics in Physical AI
 ---

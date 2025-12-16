@@ -1,3 +1,9 @@
+---
+id: assessments
+title: Assessments
+sidebar_label: Assessments
+---
+
 # Assessments
 
 ## Module 1: Foundations of Physical AI

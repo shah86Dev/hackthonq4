@@ -1,5 +1,5 @@
 ---
-id: chapter5
+id: 2-humanoid-robot-platforms
 title: Humanoid Robot Platforms
 sidebar_label: Humanoid Robot Platforms
 ---

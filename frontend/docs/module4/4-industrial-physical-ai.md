@@ -1,5 +1,5 @@
 ---
-id: chapter13
+id: 4-industrial-physical-ai
 title: Industrial Physical AI
 sidebar_label: Industrial Physical AI
 ---

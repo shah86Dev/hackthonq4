@@ -1,5 +1,5 @@
 ---
-id: chapter9
+id: 3-sim-to-real-transfer
 title: Sim-to-Real Transfer
 sidebar_label: Sim-to-Real Transfer
 ---

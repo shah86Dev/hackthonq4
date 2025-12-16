@@ -1,5 +1,5 @@
 ---
-id: chapter1
+id: 1-introduction-to-physical-ai
 title: Introduction to Physical AI
 sidebar_label: Introduction to Physical AI
 ---

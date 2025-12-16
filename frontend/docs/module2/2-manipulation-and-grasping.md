@@ -1,5 +1,5 @@
 ---
-id: chapter7
+id: 2-manipulation-and-grasping
 title: Manipulation and Grasping
 sidebar_label: Manipulation and Grasping
 ---
