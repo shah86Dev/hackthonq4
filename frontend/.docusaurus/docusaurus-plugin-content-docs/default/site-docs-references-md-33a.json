@@ -1,0 +1,28 @@
+{
+  "id": "references",
+  "title": "References",
+  "description": "This page contains the references and resources cited throughout the Physical AI & Humanoid Robotics textbook.",
+  "source": "@site/docs/references.md",
+  "sourceDirName": ".",
+  "slug": "/references",
+  "permalink": "/docs/references",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/references.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 101,
+  "frontMatter": {
+    "sidebar_label": "References",
+    "sidebar_position": 101
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Glossary",
+    "permalink": "/docs/glossary"
+  },
+  "next": {
+    "title": "Instructor Guide",
+    "permalink": "/docs/instructor-guide"
+  }
+}

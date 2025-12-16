@@ -1,0 +1,28 @@
+{
+  "id": "instructor-guide",
+  "title": "Instructor Guide",
+  "description": "This guide provides resources and recommendations for educators teaching courses based on the Physical AI & Humanoid Robotics textbook.",
+  "source": "@site/docs/instructor-guide.md",
+  "sourceDirName": ".",
+  "slug": "/instructor-guide",
+  "permalink": "/docs/instructor-guide",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/instructor-guide.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 102,
+  "frontMatter": {
+    "sidebar_label": "Instructor Guide",
+    "sidebar_position": 102
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "References",
+    "permalink": "/docs/references"
+  },
+  "next": {
+    "title": "Lab Manual",
+    "permalink": "/docs/lab-manual"
+  }
+}

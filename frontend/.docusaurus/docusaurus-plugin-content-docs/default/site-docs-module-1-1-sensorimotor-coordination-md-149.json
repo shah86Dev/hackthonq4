@@ -1,0 +1,29 @@
+{
+  "id": "module1/chapter2",
+  "title": "Sensorimotor Coordination",
+  "description": "Perception and Action in Physical Systems",
+  "source": "@site/docs/module1/1-sensorimotor-coordination.md",
+  "sourceDirName": "module1",
+  "slug": "/module1/chapter2",
+  "permalink": "/docs/module1/chapter2",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module1/1-sensorimotor-coordination.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "id": "chapter2",
+    "title": "Sensorimotor Coordination",
+    "sidebar_label": "Sensorimotor Coordination"
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Introduction to Physical AI",
+    "permalink": "/docs/module1/chapter1"
+  },
+  "next": {
+    "title": "Embodied Cognition",
+    "permalink": "/docs/module1/chapter3"
+  }
+}

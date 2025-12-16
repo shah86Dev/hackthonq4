@@ -1,0 +1,29 @@
+{
+  "id": "module3/chapter9",
+  "title": "Sim-to-Real Transfer",
+  "description": "Bridging Simulation and Reality",
+  "source": "@site/docs/module3/3-sim-to-real-transfer.md",
+  "sourceDirName": "module3",
+  "slug": "/module3/chapter9",
+  "permalink": "/docs/module3/chapter9",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module3/3-sim-to-real-transfer.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "id": "chapter9",
+    "title": "Sim-to-Real Transfer",
+    "sidebar_label": "Sim-to-Real Transfer"
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Human-Robot Interaction",
+    "permalink": "/docs/module2/chapter8"
+  },
+  "next": {
+    "title": "Physics-Informed Neural Networks",
+    "permalink": "/docs/module3/chapter10"
+  }
+}

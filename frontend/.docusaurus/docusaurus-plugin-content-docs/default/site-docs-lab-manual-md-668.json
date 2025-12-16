@@ -1,0 +1,24 @@
+{
+  "id": "lab-manual",
+  "title": "Lab Manual",
+  "description": "This manual contains all the laboratory exercises for the Physical AI & Humanoid Robotics textbook. Each lab exercise is designed to provide hands-on experience with the concepts covered in the theoretical chapters.",
+  "source": "@site/docs/lab-manual.md",
+  "sourceDirName": ".",
+  "slug": "/lab-manual",
+  "permalink": "/docs/lab-manual",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/lab-manual.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 103,
+  "frontMatter": {
+    "sidebar_label": "Lab Manual",
+    "sidebar_position": 103
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Instructor Guide",
+    "permalink": "/docs/instructor-guide"
+  }
+}

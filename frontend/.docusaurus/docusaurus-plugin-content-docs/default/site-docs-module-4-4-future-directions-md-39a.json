@@ -1,0 +1,29 @@
+{
+  "id": "module4/chapter16",
+  "title": "Future Directions",
+  "description": "Emerging Trends and Research Frontiers",
+  "source": "@site/docs/module4/4-future-directions.md",
+  "sourceDirName": "module4",
+  "slug": "/module4/chapter16",
+  "permalink": "/docs/module4/chapter16",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module4/4-future-directions.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "id": "chapter16",
+    "title": "Future Directions",
+    "sidebar_label": "Future Directions"
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Safety and Ethics in Physical AI",
+    "permalink": "/docs/module4/chapter15"
+  },
+  "next": {
+    "title": "Glossary",
+    "permalink": "/docs/glossary"
+  }
+}

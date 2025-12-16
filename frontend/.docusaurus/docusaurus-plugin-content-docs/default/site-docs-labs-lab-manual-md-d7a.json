@@ -1,0 +1,15 @@
+{
+  "id": "labs/lab-manual",
+  "title": "Lab Manuals",
+  "description": "Module 1: Foundations of Physical AI",
+  "source": "@site/docs/labs/lab-manual.md",
+  "sourceDirName": "labs",
+  "slug": "/labs/lab-manual",
+  "permalink": "/docs/labs/lab-manual",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/labs/lab-manual.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

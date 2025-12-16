@@ -1,0 +1,29 @@
+{
+  "id": "module3/chapter11",
+  "title": "Embodied Learning",
+  "description": "Learning Through Physical Interaction",
+  "source": "@site/docs/module3/3-embodied-learning.md",
+  "sourceDirName": "module3",
+  "slug": "/module3/chapter11",
+  "permalink": "/docs/module3/chapter11",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module3/3-embodied-learning.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "id": "chapter11",
+    "title": "Embodied Learning",
+    "sidebar_label": "Embodied Learning"
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Physics-Informed Neural Networks",
+    "permalink": "/docs/module3/chapter10"
+  },
+  "next": {
+    "title": "Multi-Robot Physical AI",
+    "permalink": "/docs/module3/chapter12"
+  }
+}

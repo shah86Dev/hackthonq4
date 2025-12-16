@@ -1,0 +1,29 @@
+{
+  "id": "module4/chapter13",
+  "title": "Industrial Physical AI",
+  "description": "Manufacturing and Automation Applications",
+  "source": "@site/docs/module4/4-industrial-physical-ai.md",
+  "sourceDirName": "module4",
+  "slug": "/module4/chapter13",
+  "permalink": "/docs/module4/chapter13",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module4/4-industrial-physical-ai.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "id": "chapter13",
+    "title": "Industrial Physical AI",
+    "sidebar_label": "Industrial Physical AI"
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Multi-Robot Physical AI",
+    "permalink": "/docs/module3/chapter12"
+  },
+  "next": {
+    "title": "Service Robotics",
+    "permalink": "/docs/module4/chapter14"
+  }
+}

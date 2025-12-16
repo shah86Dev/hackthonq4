@@ -1,0 +1,28 @@
+{
+  "id": "glossary",
+  "title": "Glossary",
+  "description": "This glossary contains key terms and concepts used throughout the Physical AI & Humanoid Robotics textbook.",
+  "source": "@site/docs/glossary.md",
+  "sourceDirName": ".",
+  "slug": "/glossary",
+  "permalink": "/docs/glossary",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/glossary.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 100,
+  "frontMatter": {
+    "sidebar_label": "Glossary",
+    "sidebar_position": 100
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Future Directions",
+    "permalink": "/docs/module4/chapter16"
+  },
+  "next": {
+    "title": "References",
+    "permalink": "/docs/references"
+  }
+}

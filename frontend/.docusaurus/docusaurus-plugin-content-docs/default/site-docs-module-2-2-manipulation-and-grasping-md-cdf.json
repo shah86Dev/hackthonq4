@@ -1,0 +1,29 @@
+{
+  "id": "module2/chapter7",
+  "title": "Manipulation and Grasping",
+  "description": "Dexterous Control of Robotic Hands",
+  "source": "@site/docs/module2/2-manipulation-and-grasping.md",
+  "sourceDirName": "module2",
+  "slug": "/module2/chapter7",
+  "permalink": "/docs/module2/chapter7",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module2/2-manipulation-and-grasping.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "id": "chapter7",
+    "title": "Manipulation and Grasping",
+    "sidebar_label": "Manipulation and Grasping"
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Locomotion and Gait Control",
+    "permalink": "/docs/module2/chapter6"
+  },
+  "next": {
+    "title": "Human-Robot Interaction",
+    "permalink": "/docs/module2/chapter8"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "test",
+  "title": "Test Page",
+  "description": "This is a test page to verify Docusaurus functionality.",
+  "source": "@site/docs/test.md",
+  "sourceDirName": ".",
+  "slug": "/test",
+  "permalink": "/docs/test",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/test.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "test",
+    "title": "Test Page",
+    "sidebar_label": "Test Page"
+  }
+}

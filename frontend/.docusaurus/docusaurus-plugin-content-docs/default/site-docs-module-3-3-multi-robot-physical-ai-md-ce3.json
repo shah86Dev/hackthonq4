@@ -1,0 +1,29 @@
+{
+  "id": "module3/chapter12",
+  "title": "Multi-Robot Physical AI",
+  "description": "Coordinated Behavior in Physical Systems",
+  "source": "@site/docs/module3/3-multi-robot-physical-ai.md",
+  "sourceDirName": "module3",
+  "slug": "/module3/chapter12",
+  "permalink": "/docs/module3/chapter12",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module3/3-multi-robot-physical-ai.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "id": "chapter12",
+    "title": "Multi-Robot Physical AI",
+    "sidebar_label": "Multi-Robot Physical AI"
+  },
+  "sidebar": "textbookSidebar",
+  "previous": {
+    "title": "Embodied Learning",
+    "permalink": "/docs/module3/chapter11"
+  },
+  "next": {
+    "title": "Industrial Physical AI",
+    "permalink": "/docs/module4/chapter13"
+  }
+}

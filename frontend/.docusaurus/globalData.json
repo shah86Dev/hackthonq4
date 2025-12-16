@@ -1,0 +1,145 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "intro",
+          "docs": [
+            {
+              "id": "assessments/assessments",
+              "path": "/docs/assessments/"
+            },
+            {
+              "id": "glossary",
+              "path": "/docs/glossary",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "instructor-guide",
+              "path": "/docs/instructor-guide",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "intro",
+              "path": "/docs/",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "lab-manual",
+              "path": "/docs/lab-manual",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "labs/lab-manual",
+              "path": "/docs/labs/lab-manual"
+            },
+            {
+              "id": "module1/chapter1",
+              "path": "/docs/module1/chapter1",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "module1/chapter2",
+              "path": "/docs/module1/chapter2",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "module1/chapter3",
+              "path": "/docs/module1/chapter3",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "module1/chapter4",
+              "path": "/docs/module1/chapter4",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "module2/chapter5",
+              "path": "/docs/module2/chapter5",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "module2/chapter6",
+              "path": "/docs/module2/chapter6",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "module2/chapter7",
+              "path": "/docs/module2/chapter7",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "module2/chapter8",
+              "path": "/docs/module2/chapter8",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "module3/chapter10",
+              "path": "/docs/module3/chapter10",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "module3/chapter11",
+              "path": "/docs/module3/chapter11",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "module3/chapter12",
+              "path": "/docs/module3/chapter12",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "module3/chapter9",
+              "path": "/docs/module3/chapter9",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "module4/chapter13",
+              "path": "/docs/module4/chapter13",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "module4/chapter14",
+              "path": "/docs/module4/chapter14",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "module4/chapter15",
+              "path": "/docs/module4/chapter15",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "module4/chapter16",
+              "path": "/docs/module4/chapter16",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "references",
+              "path": "/docs/references",
+              "sidebar": "textbookSidebar"
+            },
+            {
+              "id": "test",
+              "path": "/docs/test"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "textbookSidebar": {
+              "link": {
+                "path": "/docs/",
+                "label": "intro"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

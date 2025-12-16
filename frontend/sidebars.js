@@ -6,46 +6,46 @@ const sidebars = {
     {
       type: 'category',
       label: 'Getting Started',
-      items: ['intro', 'setup'],
+      items: ['intro'],
     },
     {
       type: 'category',
-      label: 'Module 1: ROS2',
+      label: 'Module 1: Foundations of Physical AI',
       items: [
-        'module1/chapter1',
-        'module1/chapter2',
-        'module1/chapter3',
-        'module1/chapter4'
+        'module1/1-introduction-to-physical-ai',
+        'module1/1-sensorimotor-coordination',
+        'module1/1-embodied-cognition',
+        'module1/1-learning-in-physical-systems'
       ],
     },
     {
       type: 'category',
-      label: 'Module 2: Gazebo & Unity',
+      label: 'Module 2: Humanoid Robotics Fundamentals',
       items: [
-        'module2/chapter5',
-        'module2/chapter6',
-        'module2/chapter7',
-        'module2/chapter8'
+        'module2/2-humanoid-robot-platforms',
+        'module2/2-locomotion-and-gait-control',
+        'module2/2-manipulation-and-grasping',
+        'module2/2-human-robot-interaction'
       ],
     },
     {
       type: 'category',
-      label: 'Module 3: NVIDIA Isaac',
+      label: 'Module 3: Advanced Physical AI Techniques',
       items: [
-        'module3/chapter9',
-        'module3/chapter10',
-        'module3/chapter11',
-        'module3/chapter12'
+        'module3/3-sim-to-real-transfer',
+        'module3/3-physics-informed-neural-networks',
+        'module3/3-embodied-learning',
+        'module3/3-multi-robot-physical-ai'
       ],
     },
     {
       type: 'category',
-      label: 'Module 4: VLA Models',
+      label: 'Module 4: Real-World Applications',
       items: [
-        'module4/chapter13',
-        'module4/chapter14',
-        'module4/chapter15',
-        'module4/chapter16'
+        'module4/4-industrial-physical-ai',
+        'module4/4-service-robotics',
+        'module4/4-safety-and-ethics-in-physical-ai',
+        'module4/4-future-directions'
       ],
     },
     {
