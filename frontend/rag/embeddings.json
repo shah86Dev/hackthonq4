@@ -1,0 +1,353 @@
+[
+  {
+    "id": "section1.1",
+    "module": "Foundations of Physical AI",
+    "chapter": "Introduction to Physical AI",
+    "section": "What is Physical AI?",
+    "content": "Physical AI represents the integration of artificial intelligence algorithms with physical systems. Unlike traditional AI that operates in virtual environments, Physical AI must navigate the complexities of the real world including physics, sensorimotor coordination, and environmental interactions.",
+    "metadata": {
+      "module_id": "module1",
+      "chapter_id": "chapter1",
+      "section_id": "section1.1",
+      "learning_outcomes": [
+        "Understand the fundamental concepts of Physical AI",
+        "Distinguish between traditional AI and Physical AI",
+        "Identify key applications of Physical AI in robotics"
+      ],
+      "prerequisites": []
+    }
+  },
+  {
+    "id": "section1.2",
+    "module": "Foundations of Physical AI",
+    "chapter": "Introduction to Physical AI",
+    "section": "Historical Context and Evolution",
+    "content": "The field of Physical AI has evolved from early robotics research to modern embodied intelligence systems. Key milestones include the development of sensorimotor learning, advances in control theory, and the integration of deep learning with physical systems.",
+    "metadata": {
+      "module_id": "module1",
+      "chapter_id": "chapter1",
+      "section_id": "section1.2",
+      "learning_outcomes": [
+        "Understand the fundamental concepts of Physical AI",
+        "Distinguish between traditional AI and Physical AI",
+        "Identify key applications of Physical AI in robotics"
+      ],
+      "prerequisites": []
+    }
+  },
+  {
+    "id": "section2.1",
+    "module": "Foundations of Physical AI",
+    "chapter": "Sensorimotor Coordination",
+    "section": "Perception-Action Loops",
+    "content": "Sensorimotor coordination is fundamental to Physical AI. It involves the continuous cycle of perception, decision-making, and action. In humanoid robotics, this loop must operate in real-time to enable stable locomotion, manipulation, and interaction with the environment.",
+    "metadata": {
+      "module_id": "module1",
+      "chapter_id": "chapter2",
+      "section_id": "section2.1",
+      "learning_outcomes": [
+        "Understand sensorimotor coordination principles",
+        "Implement basic sensorimotor loops",
+        "Analyze feedback control systems"
+      ],
+      "prerequisites": [
+        "chapter1"
+      ]
+    }
+  },
+  {
+    "id": "section3.1",
+    "module": "Foundations of Physical AI",
+    "chapter": "Embodied Cognition",
+    "section": "Morphological Computation",
+    "content": "Embodied cognition emphasizes that intelligence emerges from the interaction between an agent's body, environment, and control system. Morphological computation refers to the idea that the physical properties of a body can simplify computational tasks.",
+    "metadata": {
+      "module_id": "module1",
+      "chapter_id": "chapter3",
+      "section_id": "section3.1",
+      "learning_outcomes": [
+        "Understand embodied cognition principles",
+        "Analyze the role of morphology in intelligence",
+        "Design morphology-aware AI systems"
+      ],
+      "prerequisites": [
+        "chapter1",
+        "chapter2"
+      ]
+    }
+  },
+  {
+    "id": "section4.1",
+    "module": "Foundations of Physical AI",
+    "chapter": "Learning in Physical Systems",
+    "section": "Reinforcement Learning in Robotics",
+    "content": "Applying reinforcement learning to physical systems presents unique challenges including safety constraints, sample efficiency, and sim-to-real transfer. This section covers techniques for safe exploration and efficient learning in physical domains.",
+    "metadata": {
+      "module_id": "module1",
+      "chapter_id": "chapter4",
+      "section_id": "section4.1",
+      "learning_outcomes": [
+        "Implement reinforcement learning for physical systems",
+        "Understand sim-to-real transfer challenges",
+        "Design adaptive control systems"
+      ],
+      "prerequisites": [
+        "chapter1",
+        "chapter2",
+        "chapter3"
+      ]
+    }
+  },
+  {
+    "id": "section5.1",
+    "module": "Humanoid Robotics Fundamentals",
+    "chapter": "Humanoid Robot Platforms",
+    "section": "Popular Humanoid Platforms",
+    "content": "This section covers the major humanoid robot platforms including Honda's ASIMO, Boston Dynamics' Atlas, SoftBank's Pepper, and research platforms like the NAO and HRP-4. Each platform offers different capabilities and trade-offs between mobility, manipulation, and computational power.",
+    "metadata": {
+      "module_id": "module2",
+      "chapter_id": "chapter5",
+      "section_id": "section5.1",
+      "learning_outcomes": [
+        "Identify key humanoid robot platforms",
+        "Understand hardware architectures",
+        "Compare different control systems"
+      ],
+      "prerequisites": [
+        "module1"
+      ]
+    }
+  },
+  {
+    "id": "section6.1",
+    "module": "Humanoid Robotics Fundamentals",
+    "chapter": "Locomotion and Gait Control",
+    "section": "Bipedal Walking Dynamics",
+    "content": "Bipedal locomotion is one of the most challenging aspects of humanoid robotics. This section covers the dynamics of walking, including center of mass control, foot placement, and balance maintenance during gait transitions.",
+    "metadata": {
+      "module_id": "module2",
+      "chapter_id": "chapter6",
+      "section_id": "section6.1",
+      "learning_outcomes": [
+        "Understand bipedal locomotion principles",
+        "Implement gait control algorithms",
+        "Analyze balance and stability"
+      ],
+      "prerequisites": [
+        "chapter5"
+      ]
+    }
+  },
+  {
+    "id": "section7.1",
+    "module": "Humanoid Robotics Fundamentals",
+    "chapter": "Manipulation and Grasping",
+    "section": "Grasping and Dexterous Manipulation",
+    "content": "Humanoid robots require sophisticated manipulation capabilities to interact with objects in their environment. This section covers grasping strategies, force control, and dexterous manipulation techniques.",
+    "metadata": {
+      "module_id": "module2",
+      "chapter_id": "chapter7",
+      "section_id": "section7.1",
+      "learning_outcomes": [
+        "Design grasping strategies",
+        "Implement manipulation algorithms",
+        "Understand tactile feedback systems"
+      ],
+      "prerequisites": [
+        "chapter5",
+        "chapter6"
+      ]
+    }
+  },
+  {
+    "id": "section8.1",
+    "module": "Humanoid Robotics Fundamentals",
+    "chapter": "Human-Robot Interaction",
+    "section": "Social Robotics Principles",
+    "content": "Humanoid robots are designed to interact with humans in social contexts. This section covers the principles of social robotics, including non-verbal communication, emotional expression, and social norms.",
+    "metadata": {
+      "module_id": "module2",
+      "chapter_id": "chapter8",
+      "section_id": "section8.1",
+      "learning_outcomes": [
+        "Design natural human-robot interaction",
+        "Implement social cognition algorithms",
+        "Evaluate HRI effectiveness"
+      ],
+      "prerequisites": [
+        "chapter5",
+        "chapter6",
+        "chapter7"
+      ]
+    }
+  },
+  {
+    "id": "section9.1",
+    "module": "Advanced Physical AI Techniques",
+    "chapter": "Sim-to-Real Transfer",
+    "section": "Domain Randomization and Transfer Learning",
+    "content": "Sim-to-real transfer is crucial for Physical AI, allowing policies learned in simulation to work in the real world. This section covers domain randomization, system identification, and reality gap minimization techniques.",
+    "metadata": {
+      "module_id": "module3",
+      "chapter_id": "chapter9",
+      "section_id": "section9.1",
+      "learning_outcomes": [
+        "Understand sim-to-real challenges",
+        "Implement domain randomization",
+        "Evaluate transfer performance"
+      ],
+      "prerequisites": [
+        "module1",
+        "module2"
+      ]
+    }
+  },
+  {
+    "id": "section10.1",
+    "module": "Advanced Physical AI Techniques",
+    "chapter": "Physics-Informed Neural Networks",
+    "section": "Physics-Informed Learning",
+    "content": "Physics-informed neural networks (PINNs) incorporate physical laws directly into the learning process. This approach ensures that learned models respect fundamental physical constraints such as conservation of energy and momentum.",
+    "metadata": {
+      "module_id": "module3",
+      "chapter_id": "chapter10",
+      "section_id": "section10.1",
+      "learning_outcomes": [
+        "Implement physics-informed neural networks",
+        "Understand conservation laws in neural networks",
+        "Apply PINNs to robotics problems"
+      ],
+      "prerequisites": [
+        "chapter9"
+      ]
+    }
+  },
+  {
+    "id": "section11.1",
+    "module": "Advanced Physical AI Techniques",
+    "chapter": "Embodied Learning",
+    "section": "Curiosity-Driven Learning",
+    "content": "Embodied learning systems learn through physical interaction with their environment. This section covers curiosity-driven exploration, intrinsic motivation, and self-supervised learning in physical systems.",
+    "metadata": {
+      "module_id": "module3",
+      "chapter_id": "chapter11",
+      "section_id": "section11.1",
+      "learning_outcomes": [
+        "Design embodied learning systems",
+        "Implement curiosity-driven exploration",
+        "Evaluate learning progress in physical systems"
+      ],
+      "prerequisites": [
+        "chapter9",
+        "chapter10"
+      ]
+    }
+  },
+  {
+    "id": "section12.1",
+    "module": "Advanced Physical AI Techniques",
+    "chapter": "Multi-Robot Physical AI",
+    "section": "Cooperative Physical Systems",
+    "content": "Multiple physical AI agents can coordinate to achieve complex tasks. This section covers communication protocols, distributed control, and emergent behaviors in multi-robot systems.",
+    "metadata": {
+      "module_id": "module3",
+      "chapter_id": "chapter12",
+      "section_id": "section12.1",
+      "learning_outcomes": [
+        "Design multi-robot coordination algorithms",
+        "Implement distributed physical AI",
+        "Analyze emergent behaviors"
+      ],
+      "prerequisites": [
+        "chapter9",
+        "chapter10",
+        "chapter11"
+      ]
+    }
+  },
+  {
+    "id": "section13.1",
+    "module": "Real-World Applications and Integration",
+    "chapter": "Industrial Physical AI",
+    "section": "Manufacturing Robotics",
+    "content": "Physical AI is increasingly used in manufacturing for tasks requiring dexterity, adaptability, and human-robot collaboration. This section covers applications in assembly, quality control, and flexible manufacturing.",
+    "metadata": {
+      "module_id": "module4",
+      "chapter_id": "chapter13",
+      "section_id": "section13.1",
+      "learning_outcomes": [
+        "Analyze industrial Physical AI applications",
+        "Design robotic automation systems",
+        "Evaluate safety and efficiency"
+      ],
+      "prerequisites": [
+        "module1",
+        "module2",
+        "module3"
+      ]
+    }
+  },
+  {
+    "id": "section14.1",
+    "module": "Real-World Applications and Integration",
+    "chapter": "Service Robotics",
+    "section": "Assistive Robotics",
+    "content": "Service robots assist humans in daily tasks, from domestic chores to healthcare support. This section covers navigation, manipulation, and human-robot interaction in service applications.",
+    "metadata": {
+      "module_id": "module4",
+      "chapter_id": "chapter14",
+      "section_id": "section14.1",
+      "learning_outcomes": [
+        "Design service robotics applications",
+        "Implement assistive technologies",
+        "Consider ethical implications"
+      ],
+      "prerequisites": [
+        "chapter13"
+      ]
+    }
+  },
+  {
+    "id": "section15.1",
+    "module": "Real-World Applications and Integration",
+    "chapter": "Safety and Ethics in Physical AI",
+    "section": "Safety in Physical AI Systems",
+    "content": "Safety is paramount in Physical AI systems that operate in close proximity to humans. This section covers safety standards, fail-safe mechanisms, and risk assessment in physical AI applications.",
+    "metadata": {
+      "module_id": "module4",
+      "chapter_id": "chapter15",
+      "section_id": "section15.1",
+      "learning_outcomes": [
+        "Analyze safety considerations in Physical AI",
+        "Implement safety protocols",
+        "Consider ethical implications"
+      ],
+      "prerequisites": [
+        "chapter13",
+        "chapter14"
+      ]
+    }
+  },
+  {
+    "id": "section16.1",
+    "module": "Real-World Applications and Integration",
+    "chapter": "Future Directions",
+    "section": "Research Frontiers",
+    "content": "The field of Physical AI continues to evolve with new research directions including neuromorphic physical systems, bio-hybrid robots, and quantum-enhanced physical AI. This section explores these emerging areas.",
+    "metadata": {
+      "module_id": "module4",
+      "chapter_id": "chapter16",
+      "section_id": "section16.1",
+      "learning_outcomes": [
+        "Identify emerging trends in Physical AI",
+        "Analyze research frontiers",
+        "Propose future research directions"
+      ],
+      "prerequisites": [
+        "chapter13",
+        "chapter14",
+        "chapter15"
+      ]
+    }
+  }
+]

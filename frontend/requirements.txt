@@ -1,0 +1,2 @@
+# This is a placeholder file since Docusaurus uses Node.js
+# The actual dependencies are in package.json

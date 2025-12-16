@@ -1,0 +1,272 @@
+{
+  "book_title": "Physical AI & Humanoid Robotics - University Textbook",
+  "book_subtitle": "A Comprehensive Guide to Embodied Intelligence",
+  "version": "1.0.0",
+  "description": "A complete university-level textbook covering Physical AI and Humanoid Robotics with 16 chapters, lab exercises, and AI-native content structure",
+  "total_modules": 4,
+  "total_chapters": 16,
+  "total_weeks": 16,
+  "target_audience": "University students with basic robotics knowledge",
+  "prerequisites": [
+    "Basic programming skills",
+    "Introduction to robotics",
+    "Linear algebra and calculus",
+    "Probability and statistics"
+  ],
+  "learning_outcomes_by_module": {
+    "module1": [
+      {
+        "chapter_id": "chapter1",
+        "chapter_title": "Introduction to Physical AI",
+        "outcome": "Understand the fundamental concepts of Physical AI"
+      },
+      {
+        "chapter_id": "chapter1",
+        "chapter_title": "Introduction to Physical AI",
+        "outcome": "Distinguish between traditional AI and Physical AI"
+      },
+      {
+        "chapter_id": "chapter1",
+        "chapter_title": "Introduction to Physical AI",
+        "outcome": "Identify key applications of Physical AI in robotics"
+      },
+      {
+        "chapter_id": "chapter2",
+        "chapter_title": "Sensorimotor Coordination",
+        "outcome": "Understand sensorimotor coordination principles"
+      },
+      {
+        "chapter_id": "chapter2",
+        "chapter_title": "Sensorimotor Coordination",
+        "outcome": "Implement basic sensorimotor loops"
+      },
+      {
+        "chapter_id": "chapter2",
+        "chapter_title": "Sensorimotor Coordination",
+        "outcome": "Analyze feedback control systems"
+      },
+      {
+        "chapter_id": "chapter3",
+        "chapter_title": "Embodied Cognition",
+        "outcome": "Understand embodied cognition principles"
+      },
+      {
+        "chapter_id": "chapter3",
+        "chapter_title": "Embodied Cognition",
+        "outcome": "Analyze the role of morphology in intelligence"
+      },
+      {
+        "chapter_id": "chapter3",
+        "chapter_title": "Embodied Cognition",
+        "outcome": "Design morphology-aware AI systems"
+      },
+      {
+        "chapter_id": "chapter4",
+        "chapter_title": "Learning in Physical Systems",
+        "outcome": "Implement reinforcement learning for physical systems"
+      },
+      {
+        "chapter_id": "chapter4",
+        "chapter_title": "Learning in Physical Systems",
+        "outcome": "Understand sim-to-real transfer challenges"
+      },
+      {
+        "chapter_id": "chapter4",
+        "chapter_title": "Learning in Physical Systems",
+        "outcome": "Design adaptive control systems"
+      }
+    ],
+    "module2": [
+      {
+        "chapter_id": "chapter5",
+        "chapter_title": "Humanoid Robot Platforms",
+        "outcome": "Identify key humanoid robot platforms"
+      },
+      {
+        "chapter_id": "chapter5",
+        "chapter_title": "Humanoid Robot Platforms",
+        "outcome": "Understand hardware architectures"
+      },
+      {
+        "chapter_id": "chapter5",
+        "chapter_title": "Humanoid Robot Platforms",
+        "outcome": "Compare different control systems"
+      },
+      {
+        "chapter_id": "chapter6",
+        "chapter_title": "Locomotion and Gait Control",
+        "outcome": "Understand bipedal locomotion principles"
+      },
+      {
+        "chapter_id": "chapter6",
+        "chapter_title": "Locomotion and Gait Control",
+        "outcome": "Implement gait control algorithms"
+      },
+      {
+        "chapter_id": "chapter6",
+        "chapter_title": "Locomotion and Gait Control",
+        "outcome": "Analyze balance and stability"
+      },
+      {
+        "chapter_id": "chapter7",
+        "chapter_title": "Manipulation and Grasping",
+        "outcome": "Design grasping strategies"
+      },
+      {
+        "chapter_id": "chapter7",
+        "chapter_title": "Manipulation and Grasping",
+        "outcome": "Implement manipulation algorithms"
+      },
+      {
+        "chapter_id": "chapter7",
+        "chapter_title": "Manipulation and Grasping",
+        "outcome": "Understand tactile feedback systems"
+      },
+      {
+        "chapter_id": "chapter8",
+        "chapter_title": "Human-Robot Interaction",
+        "outcome": "Design natural human-robot interaction"
+      },
+      {
+        "chapter_id": "chapter8",
+        "chapter_title": "Human-Robot Interaction",
+        "outcome": "Implement social cognition algorithms"
+      },
+      {
+        "chapter_id": "chapter8",
+        "chapter_title": "Human-Robot Interaction",
+        "outcome": "Evaluate HRI effectiveness"
+      }
+    ],
+    "module3": [
+      {
+        "chapter_id": "chapter9",
+        "chapter_title": "Sim-to-Real Transfer",
+        "outcome": "Understand sim-to-real challenges"
+      },
+      {
+        "chapter_id": "chapter9",
+        "chapter_title": "Sim-to-Real Transfer",
+        "outcome": "Implement domain randomization"
+      },
+      {
+        "chapter_id": "chapter9",
+        "chapter_title": "Sim-to-Real Transfer",
+        "outcome": "Evaluate transfer performance"
+      },
+      {
+        "chapter_id": "chapter10",
+        "chapter_title": "Physics-Informed Neural Networks",
+        "outcome": "Implement physics-informed neural networks"
+      },
+      {
+        "chapter_id": "chapter10",
+        "chapter_title": "Physics-Informed Neural Networks",
+        "outcome": "Understand conservation laws in neural networks"
+      },
+      {
+        "chapter_id": "chapter10",
+        "chapter_title": "Physics-Informed Neural Networks",
+        "outcome": "Apply PINNs to robotics problems"
+      },
+      {
+        "chapter_id": "chapter11",
+        "chapter_title": "Embodied Learning",
+        "outcome": "Design embodied learning systems"
+      },
+      {
+        "chapter_id": "chapter11",
+        "chapter_title": "Embodied Learning",
+        "outcome": "Implement curiosity-driven exploration"
+      },
+      {
+        "chapter_id": "chapter11",
+        "chapter_title": "Embodied Learning",
+        "outcome": "Evaluate learning progress in physical systems"
+      },
+      {
+        "chapter_id": "chapter12",
+        "chapter_title": "Multi-Robot Physical AI",
+        "outcome": "Design multi-robot coordination algorithms"
+      },
+      {
+        "chapter_id": "chapter12",
+        "chapter_title": "Multi-Robot Physical AI",
+        "outcome": "Implement distributed physical AI"
+      },
+      {
+        "chapter_id": "chapter12",
+        "chapter_title": "Multi-Robot Physical AI",
+        "outcome": "Analyze emergent behaviors"
+      }
+    ],
+    "module4": [
+      {
+        "chapter_id": "chapter13",
+        "chapter_title": "Industrial Physical AI",
+        "outcome": "Analyze industrial Physical AI applications"
+      },
+      {
+        "chapter_id": "chapter13",
+        "chapter_title": "Industrial Physical AI",
+        "outcome": "Design robotic automation systems"
+      },
+      {
+        "chapter_id": "chapter13",
+        "chapter_title": "Industrial Physical AI",
+        "outcome": "Evaluate safety and efficiency"
+      },
+      {
+        "chapter_id": "chapter14",
+        "chapter_title": "Service Robotics",
+        "outcome": "Design service robotics applications"
+      },
+      {
+        "chapter_id": "chapter14",
+        "chapter_title": "Service Robotics",
+        "outcome": "Implement assistive technologies"
+      },
+      {
+        "chapter_id": "chapter14",
+        "chapter_title": "Service Robotics",
+        "outcome": "Consider ethical implications"
+      },
+      {
+        "chapter_id": "chapter15",
+        "chapter_title": "Safety and Ethics in Physical AI",
+        "outcome": "Analyze safety considerations in Physical AI"
+      },
+      {
+        "chapter_id": "chapter15",
+        "chapter_title": "Safety and Ethics in Physical AI",
+        "outcome": "Implement safety protocols"
+      },
+      {
+        "chapter_id": "chapter15",
+        "chapter_title": "Safety and Ethics in Physical AI",
+        "outcome": "Consider ethical implications"
+      },
+      {
+        "chapter_id": "chapter16",
+        "chapter_title": "Future Directions",
+        "outcome": "Identify emerging trends in Physical AI"
+      },
+      {
+        "chapter_id": "chapter16",
+        "chapter_title": "Future Directions",
+        "outcome": "Analyze research frontiers"
+      },
+      {
+        "chapter_id": "chapter16",
+        "chapter_title": "Future Directions",
+        "outcome": "Propose future research directions"
+      }
+    ]
+  },
+  "ai_native_features": {
+    "rag_ready": true,
+    "personalization_flags": true,
+    "translation_flags": true,
+    "sim_to_real_annotations": true
+  }
+}
