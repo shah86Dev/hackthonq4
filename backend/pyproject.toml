@@ -1,0 +1,32 @@
+[tool.black]
+line-length = 88
+target-version = ['py311']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.venv
+  | venv
+  | env
+  | \.env
+  | node_modules
+  | dist
+  | build
+  | \.egg-info
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+known_first_party = ["src"]
+known_third_party = ["fastapi", "uvicorn", "openai", "qdrant_client", "sqlalchemy", "pydantic", "pydantic_settings", "pytest", "httpx", "tiktoken", "uuid7"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"

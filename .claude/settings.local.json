@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "SlashCommand(/sp.implement)",
+      "Bash(alembic -c backend/alembic.ini revision --autogenerate -m \"Initial database schema for Book-Embedded RAG Chatbot\")"
+    ]
+  }
+}

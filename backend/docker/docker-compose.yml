@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://user:password@postgres:5432/physical_ai_rag
+      - QDRANT_URL=http://qdrant:6333
+      - QDRANT_API_KEY=local_key
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ENVIRONMENT=local
+    depends_on:
+      - postgres
+      - qdrant
+    volumes:
+      - ./src:/app/src
+      - ./tests:/app/tests
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: physical_ai_rag
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+volumes:
+  postgres_data:
+  qdrant_data:

@@ -1,6 +1,43 @@
 # Dependencies
 node_modules/
 
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+env.bak/
+venv.bak/
+.venv.bak/
+.PYTHONPATH
+.python-version
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.git/modules/
+.pytest_cache/
+.hypothesis/
+
+# Virtual Environment
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+.venv.bak/
+
 # Docusaurus build outputs
 frontend/build/
 frontend/.docusaurus/
@@ -8,6 +45,8 @@ frontend/.cache/
 
 # Environment variables
 .env*
+backend/.env
+chatbot/.env
 
 # OS generated files
 .DS_Store
@@ -16,6 +55,9 @@ Thumbs.db
 # IDE files
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
 
 # Logs
 *.log
@@ -52,3 +94,22 @@ static/
 
 # Generated files
 frontend/static/
+
+# Backend
+backend/__pycache__/
+backend/*.pyc
+backend/.venv/
+backend/venv/
+
+# Frontend
+chatbot/node_modules/
+chatbot/dist/
+chatbot/.nyc_output
+chatbot/coverage/
+chatbot/nyc_output/
+
+# Runtime
+.pyc
+.pyo
+.pycache/
+__pycache__/
