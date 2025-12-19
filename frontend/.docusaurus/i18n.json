@@ -1,8 +1,7 @@
 {
   "defaultLocale": "en",
   "locales": [
-    "en",
-    "ur"
+    "en"
   ],
   "path": "i18n",
   "currentLocale": "en",
@@ -14,18 +13,8 @@
       "calendar": "gregory",
       "path": "en",
       "translate": false,
-      "url": "https://your-gh-pages-url.github.io",
+      "url": "https://hackthonq4.vercel.app",
       "baseUrl": "/"
-    },
-    "ur": {
-      "label": "اردو",
-      "direction": "rtl",
-      "htmlLang": "ur",
-      "calendar": "gregory",
-      "path": "ur",
-      "translate": false,
-      "url": "https://your-gh-pages-url.github.io",
-      "baseUrl": "/ur/"
     }
   }
 }

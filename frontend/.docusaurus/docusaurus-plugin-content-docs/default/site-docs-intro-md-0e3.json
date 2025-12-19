@@ -1,11 +1,11 @@
 {
   "id": "intro",
-  "title": "Physical AI & Humanoid Robotics - University Textbook",
-  "description": "A Comprehensive Guide to Embodied Intelligence",
+  "title": "Advanced Physical AI & Robotics - University Textbook",
+  "description": "Building Embodied Intelligence for Real-World Autonomous Systems",
   "source": "@site/docs/intro.md",
   "sourceDirName": ".",
-  "slug": "/",
-  "permalink": "/docs/",
+  "slug": "/intro",
+  "permalink": "/docs/intro",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/intro.md",
@@ -13,13 +13,7 @@
   "version": "current",
   "frontMatter": {
     "id": "intro",
-    "title": "Physical AI & Humanoid Robotics - University Textbook",
-    "sidebar_label": "Introduction",
-    "slug": "/"
-  },
-  "sidebar": "textbookSidebar",
-  "next": {
-    "title": "Introduction to Physical AI",
-    "permalink": "/docs/module1/chapter1"
+    "title": "Advanced Physical AI & Robotics - University Textbook",
+    "sidebar_label": "Introduction"
   }
 }

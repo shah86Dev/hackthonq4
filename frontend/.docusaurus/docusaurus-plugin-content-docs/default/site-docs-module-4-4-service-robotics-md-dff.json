@@ -1,11 +1,11 @@
 {
-  "id": "module4/chapter14",
+  "id": "module4/4-service-robotics",
   "title": "Service Robotics",
   "description": "Assistive and Domestic Applications",
   "source": "@site/docs/module4/4-service-robotics.md",
   "sourceDirName": "module4",
-  "slug": "/module4/chapter14",
-  "permalink": "/docs/module4/chapter14",
+  "slug": "/module4/4-service-robotics",
+  "permalink": "/docs/module4/4-service-robotics",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module4/4-service-robotics.md",
@@ -13,17 +13,17 @@
   "version": "current",
   "sidebarPosition": 4,
   "frontMatter": {
-    "id": "chapter14",
+    "id": "4-service-robotics",
     "title": "Service Robotics",
     "sidebar_label": "Service Robotics"
   },
   "sidebar": "textbookSidebar",
   "previous": {
     "title": "Industrial Physical AI",
-    "permalink": "/docs/module4/chapter13"
+    "permalink": "/docs/module4/4-industrial-physical-ai"
   },
   "next": {
     "title": "Safety and Ethics in Physical AI",
-    "permalink": "/docs/module4/chapter15"
+    "permalink": "/docs/module4/4-safety-and-ethics-in-physical-ai"
   }
 }

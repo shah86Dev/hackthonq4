@@ -1,11 +1,11 @@
 {
-  "id": "module3/chapter11",
+  "id": "module3/3-embodied-learning",
   "title": "Embodied Learning",
   "description": "Learning Through Physical Interaction",
   "source": "@site/docs/module3/3-embodied-learning.md",
   "sourceDirName": "module3",
-  "slug": "/module3/chapter11",
-  "permalink": "/docs/module3/chapter11",
+  "slug": "/module3/3-embodied-learning",
+  "permalink": "/docs/module3/3-embodied-learning",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module3/3-embodied-learning.md",
@@ -13,17 +13,17 @@
   "version": "current",
   "sidebarPosition": 3,
   "frontMatter": {
-    "id": "chapter11",
+    "id": "3-embodied-learning",
     "title": "Embodied Learning",
     "sidebar_label": "Embodied Learning"
   },
   "sidebar": "textbookSidebar",
   "previous": {
     "title": "Physics-Informed Neural Networks",
-    "permalink": "/docs/module3/chapter10"
+    "permalink": "/docs/module3/3-physics-informed-neural-networks"
   },
   "next": {
     "title": "Multi-Robot Physical AI",
-    "permalink": "/docs/module3/chapter12"
+    "permalink": "/docs/module3/3-multi-robot-physical-ai"
   }
 }

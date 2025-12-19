@@ -1,11 +1,11 @@
 {
-  "id": "module2/chapter5",
+  "id": "module2/2-humanoid-robot-platforms",
   "title": "Humanoid Robot Platforms",
   "description": "Hardware and Software Architectures",
   "source": "@site/docs/module2/2-humanoid-robot-platforms.md",
   "sourceDirName": "module2",
-  "slug": "/module2/chapter5",
-  "permalink": "/docs/module2/chapter5",
+  "slug": "/module2/2-humanoid-robot-platforms",
+  "permalink": "/docs/module2/2-humanoid-robot-platforms",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module2/2-humanoid-robot-platforms.md",
@@ -13,17 +13,17 @@
   "version": "current",
   "sidebarPosition": 2,
   "frontMatter": {
-    "id": "chapter5",
+    "id": "2-humanoid-robot-platforms",
     "title": "Humanoid Robot Platforms",
     "sidebar_label": "Humanoid Robot Platforms"
   },
   "sidebar": "textbookSidebar",
   "previous": {
     "title": "Learning in Physical Systems",
-    "permalink": "/docs/module1/chapter4"
+    "permalink": "/docs/module1/1-learning-in-physical-systems"
   },
   "next": {
     "title": "Locomotion and Gait Control",
-    "permalink": "/docs/module2/chapter6"
+    "permalink": "/docs/module2/2-locomotion-and-gait-control"
   }
 }

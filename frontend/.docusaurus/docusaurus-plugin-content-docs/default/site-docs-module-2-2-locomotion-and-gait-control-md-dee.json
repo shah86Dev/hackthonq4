@@ -1,11 +1,11 @@
 {
-  "id": "module2/chapter6",
+  "id": "module2/2-locomotion-and-gait-control",
   "title": "Locomotion and Gait Control",
   "description": "Bipedal Walking and Dynamic Balance",
   "source": "@site/docs/module2/2-locomotion-and-gait-control.md",
   "sourceDirName": "module2",
-  "slug": "/module2/chapter6",
-  "permalink": "/docs/module2/chapter6",
+  "slug": "/module2/2-locomotion-and-gait-control",
+  "permalink": "/docs/module2/2-locomotion-and-gait-control",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module2/2-locomotion-and-gait-control.md",
@@ -13,17 +13,17 @@
   "version": "current",
   "sidebarPosition": 2,
   "frontMatter": {
-    "id": "chapter6",
+    "id": "2-locomotion-and-gait-control",
     "title": "Locomotion and Gait Control",
     "sidebar_label": "Locomotion and Gait Control"
   },
   "sidebar": "textbookSidebar",
   "previous": {
     "title": "Humanoid Robot Platforms",
-    "permalink": "/docs/module2/chapter5"
+    "permalink": "/docs/module2/2-humanoid-robot-platforms"
   },
   "next": {
     "title": "Manipulation and Grasping",
-    "permalink": "/docs/module2/chapter7"
+    "permalink": "/docs/module2/2-manipulation-and-grasping"
   }
 }

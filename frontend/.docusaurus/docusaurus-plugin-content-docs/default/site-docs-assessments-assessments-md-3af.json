@@ -11,5 +11,9 @@
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/assessments/assessments.md",
   "tags": [],
   "version": "current",
-  "frontMatter": {}
+  "frontMatter": {
+    "id": "assessments",
+    "title": "Assessments",
+    "sidebar_label": "Assessments"
+  }
 }

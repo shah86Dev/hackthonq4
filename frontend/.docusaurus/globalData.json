@@ -8,7 +8,7 @@
           "label": "Next",
           "isLast": true,
           "path": "/docs",
-          "mainDocId": "intro",
+          "mainDocId": "module1/1-introduction-to-physical-ai",
           "docs": [
             {
               "id": "assessments/assessments",
@@ -26,8 +26,7 @@
             },
             {
               "id": "intro",
-              "path": "/docs/",
-              "sidebar": "textbookSidebar"
+              "path": "/docs/intro"
             },
             {
               "id": "lab-manual",
@@ -39,83 +38,83 @@
               "path": "/docs/labs/lab-manual"
             },
             {
-              "id": "module1/chapter1",
-              "path": "/docs/module1/chapter1",
+              "id": "module1/1-embodied-cognition",
+              "path": "/docs/module1/1-embodied-cognition",
               "sidebar": "textbookSidebar"
             },
             {
-              "id": "module1/chapter2",
-              "path": "/docs/module1/chapter2",
+              "id": "module1/1-introduction-to-physical-ai",
+              "path": "/docs/module1/1-introduction-to-physical-ai",
               "sidebar": "textbookSidebar"
             },
             {
-              "id": "module1/chapter3",
-              "path": "/docs/module1/chapter3",
+              "id": "module1/1-learning-in-physical-systems",
+              "path": "/docs/module1/1-learning-in-physical-systems",
               "sidebar": "textbookSidebar"
             },
             {
-              "id": "module1/chapter4",
-              "path": "/docs/module1/chapter4",
+              "id": "module1/1-sensorimotor-coordination",
+              "path": "/docs/module1/1-sensorimotor-coordination",
               "sidebar": "textbookSidebar"
             },
             {
-              "id": "module2/chapter5",
-              "path": "/docs/module2/chapter5",
+              "id": "module2/2-human-robot-interaction",
+              "path": "/docs/module2/2-human-robot-interaction",
               "sidebar": "textbookSidebar"
             },
             {
-              "id": "module2/chapter6",
-              "path": "/docs/module2/chapter6",
+              "id": "module2/2-humanoid-robot-platforms",
+              "path": "/docs/module2/2-humanoid-robot-platforms",
               "sidebar": "textbookSidebar"
             },
             {
-              "id": "module2/chapter7",
-              "path": "/docs/module2/chapter7",
+              "id": "module2/2-locomotion-and-gait-control",
+              "path": "/docs/module2/2-locomotion-and-gait-control",
               "sidebar": "textbookSidebar"
             },
             {
-              "id": "module2/chapter8",
-              "path": "/docs/module2/chapter8",
+              "id": "module2/2-manipulation-and-grasping",
+              "path": "/docs/module2/2-manipulation-and-grasping",
               "sidebar": "textbookSidebar"
             },
             {
-              "id": "module3/chapter10",
-              "path": "/docs/module3/chapter10",
+              "id": "module3/3-embodied-learning",
+              "path": "/docs/module3/3-embodied-learning",
               "sidebar": "textbookSidebar"
             },
             {
-              "id": "module3/chapter11",
-              "path": "/docs/module3/chapter11",
+              "id": "module3/3-multi-robot-physical-ai",
+              "path": "/docs/module3/3-multi-robot-physical-ai",
               "sidebar": "textbookSidebar"
             },
             {
-              "id": "module3/chapter12",
-              "path": "/docs/module3/chapter12",
+              "id": "module3/3-physics-informed-neural-networks",
+              "path": "/docs/module3/3-physics-informed-neural-networks",
               "sidebar": "textbookSidebar"
             },
             {
-              "id": "module3/chapter9",
-              "path": "/docs/module3/chapter9",
+              "id": "module3/3-sim-to-real-transfer",
+              "path": "/docs/module3/3-sim-to-real-transfer",
               "sidebar": "textbookSidebar"
             },
             {
-              "id": "module4/chapter13",
-              "path": "/docs/module4/chapter13",
+              "id": "module4/4-future-directions",
+              "path": "/docs/module4/4-future-directions",
               "sidebar": "textbookSidebar"
             },
             {
-              "id": "module4/chapter14",
-              "path": "/docs/module4/chapter14",
+              "id": "module4/4-industrial-physical-ai",
+              "path": "/docs/module4/4-industrial-physical-ai",
               "sidebar": "textbookSidebar"
             },
             {
-              "id": "module4/chapter15",
-              "path": "/docs/module4/chapter15",
+              "id": "module4/4-safety-and-ethics-in-physical-ai",
+              "path": "/docs/module4/4-safety-and-ethics-in-physical-ai",
               "sidebar": "textbookSidebar"
             },
             {
-              "id": "module4/chapter16",
-              "path": "/docs/module4/chapter16",
+              "id": "module4/4-service-robotics",
+              "path": "/docs/module4/4-service-robotics",
               "sidebar": "textbookSidebar"
             },
             {
@@ -132,8 +131,8 @@
           "sidebars": {
             "textbookSidebar": {
               "link": {
-                "path": "/docs/",
-                "label": "intro"
+                "path": "/docs/module1/1-introduction-to-physical-ai",
+                "label": "module1/1-introduction-to-physical-ai"
               }
             }
           }

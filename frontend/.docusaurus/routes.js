@@ -39,22 +39,16 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '09b'),
+    component: ComponentCreator('/docs', 'b96'),
     routes: [
       {
         path: '/docs',
-        component: ComponentCreator('/docs', '5e8'),
+        component: ComponentCreator('/docs', '9c3'),
         routes: [
           {
             path: '/docs',
-            component: ComponentCreator('/docs', 'fe8'),
+            component: ComponentCreator('/docs', 'd0c'),
             routes: [
-              {
-                path: '/docs/',
-                component: ComponentCreator('/docs/', '160'),
-                exact: true,
-                sidebar: "textbookSidebar"
-              },
               {
                 path: '/docs/assessments/',
                 component: ComponentCreator('/docs/assessments/', '79a'),
@@ -73,6 +67,11 @@ export default [
                 sidebar: "textbookSidebar"
               },
               {
+                path: '/docs/intro',
+                component: ComponentCreator('/docs/intro', '853'),
+                exact: true
+              },
+              {
                 path: '/docs/lab-manual',
                 component: ComponentCreator('/docs/lab-manual', '4e8'),
                 exact: true,
@@ -84,98 +83,98 @@ export default [
                 exact: true
               },
               {
-                path: '/docs/module1/chapter1',
-                component: ComponentCreator('/docs/module1/chapter1', '7b0'),
+                path: '/docs/module1/1-embodied-cognition',
+                component: ComponentCreator('/docs/module1/1-embodied-cognition', '350'),
                 exact: true,
                 sidebar: "textbookSidebar"
               },
               {
-                path: '/docs/module1/chapter2',
-                component: ComponentCreator('/docs/module1/chapter2', '625'),
+                path: '/docs/module1/1-introduction-to-physical-ai',
+                component: ComponentCreator('/docs/module1/1-introduction-to-physical-ai', '42b'),
                 exact: true,
                 sidebar: "textbookSidebar"
               },
               {
-                path: '/docs/module1/chapter3',
-                component: ComponentCreator('/docs/module1/chapter3', '764'),
+                path: '/docs/module1/1-learning-in-physical-systems',
+                component: ComponentCreator('/docs/module1/1-learning-in-physical-systems', '962'),
                 exact: true,
                 sidebar: "textbookSidebar"
               },
               {
-                path: '/docs/module1/chapter4',
-                component: ComponentCreator('/docs/module1/chapter4', '674'),
+                path: '/docs/module1/1-sensorimotor-coordination',
+                component: ComponentCreator('/docs/module1/1-sensorimotor-coordination', 'bf9'),
                 exact: true,
                 sidebar: "textbookSidebar"
               },
               {
-                path: '/docs/module2/chapter5',
-                component: ComponentCreator('/docs/module2/chapter5', 'aba'),
+                path: '/docs/module2/2-human-robot-interaction',
+                component: ComponentCreator('/docs/module2/2-human-robot-interaction', '663'),
                 exact: true,
                 sidebar: "textbookSidebar"
               },
               {
-                path: '/docs/module2/chapter6',
-                component: ComponentCreator('/docs/module2/chapter6', 'c01'),
+                path: '/docs/module2/2-humanoid-robot-platforms',
+                component: ComponentCreator('/docs/module2/2-humanoid-robot-platforms', '535'),
                 exact: true,
                 sidebar: "textbookSidebar"
               },
               {
-                path: '/docs/module2/chapter7',
-                component: ComponentCreator('/docs/module2/chapter7', '1e3'),
+                path: '/docs/module2/2-locomotion-and-gait-control',
+                component: ComponentCreator('/docs/module2/2-locomotion-and-gait-control', '771'),
                 exact: true,
                 sidebar: "textbookSidebar"
               },
               {
-                path: '/docs/module2/chapter8',
-                component: ComponentCreator('/docs/module2/chapter8', '241'),
+                path: '/docs/module2/2-manipulation-and-grasping',
+                component: ComponentCreator('/docs/module2/2-manipulation-and-grasping', '4bb'),
                 exact: true,
                 sidebar: "textbookSidebar"
               },
               {
-                path: '/docs/module3/chapter10',
-                component: ComponentCreator('/docs/module3/chapter10', '11a'),
+                path: '/docs/module3/3-embodied-learning',
+                component: ComponentCreator('/docs/module3/3-embodied-learning', '9a1'),
                 exact: true,
                 sidebar: "textbookSidebar"
               },
               {
-                path: '/docs/module3/chapter11',
-                component: ComponentCreator('/docs/module3/chapter11', 'fff'),
+                path: '/docs/module3/3-multi-robot-physical-ai',
+                component: ComponentCreator('/docs/module3/3-multi-robot-physical-ai', 'aba'),
                 exact: true,
                 sidebar: "textbookSidebar"
               },
               {
-                path: '/docs/module3/chapter12',
-                component: ComponentCreator('/docs/module3/chapter12', '9ca'),
+                path: '/docs/module3/3-physics-informed-neural-networks',
+                component: ComponentCreator('/docs/module3/3-physics-informed-neural-networks', '34d'),
                 exact: true,
                 sidebar: "textbookSidebar"
               },
               {
-                path: '/docs/module3/chapter9',
-                component: ComponentCreator('/docs/module3/chapter9', 'c4b'),
+                path: '/docs/module3/3-sim-to-real-transfer',
+                component: ComponentCreator('/docs/module3/3-sim-to-real-transfer', '9f0'),
                 exact: true,
                 sidebar: "textbookSidebar"
               },
               {
-                path: '/docs/module4/chapter13',
-                component: ComponentCreator('/docs/module4/chapter13', 'ebe'),
+                path: '/docs/module4/4-future-directions',
+                component: ComponentCreator('/docs/module4/4-future-directions', 'c07'),
                 exact: true,
                 sidebar: "textbookSidebar"
               },
               {
-                path: '/docs/module4/chapter14',
-                component: ComponentCreator('/docs/module4/chapter14', 'f7a'),
+                path: '/docs/module4/4-industrial-physical-ai',
+                component: ComponentCreator('/docs/module4/4-industrial-physical-ai', '22a'),
                 exact: true,
                 sidebar: "textbookSidebar"
               },
               {
-                path: '/docs/module4/chapter15',
-                component: ComponentCreator('/docs/module4/chapter15', '7cc'),
+                path: '/docs/module4/4-safety-and-ethics-in-physical-ai',
+                component: ComponentCreator('/docs/module4/4-safety-and-ethics-in-physical-ai', '279'),
                 exact: true,
                 sidebar: "textbookSidebar"
               },
               {
-                path: '/docs/module4/chapter16',
-                component: ComponentCreator('/docs/module4/chapter16', '8b0'),
+                path: '/docs/module4/4-service-robotics',
+                component: ComponentCreator('/docs/module4/4-service-robotics', 'a95'),
                 exact: true,
                 sidebar: "textbookSidebar"
               },
@@ -195,6 +194,11 @@ export default [
         ]
       }
     ]
+  },
+  {
+    path: '/',
+    component: ComponentCreator('/', '2e1'),
+    exact: true
   },
   {
     path: '*',

@@ -42,22 +42,18 @@
       "plugin": "plugin---docusaurus-debugb-38-ad3"
     }
   },
-  "/docs-09b": {
+  "/docs-b96": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---docsaba-d7c"
     }
   },
-  "/docs-5e8": {
+  "/docs-9c3": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---docs-005-788"
   },
-  "/docs-fe8": {
+  "/docs-d0c": {
     "__comp": "__comp---theme-doc-roota-94-67a"
-  },
-  "/docs/-160": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-0-e-3-18c"
   },
   "/docs/assessments/-79a": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -71,6 +67,10 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-instructor-guide-871-7d5"
   },
+  "/docs/intro-853": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-intro-0-e-3-be1"
+  },
   "/docs/lab-manual-4e8": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-lab-manual-668-5a4"
@@ -79,69 +79,69 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-labs-lab-manuald-7-a-ece"
   },
-  "/docs/module1/chapter1-7b0": {
+  "/docs/module1/1-embodied-cognition-350": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-1-chapter-15-a-4-d97"
+    "content": "content---docs-module-1-1-embodied-cognition-798-617"
   },
-  "/docs/module1/chapter2-625": {
+  "/docs/module1/1-introduction-to-physical-ai-42b": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-1-chapter-2149-66a"
+    "content": "content---docs-module-1-1-introduction-to-physical-ai-5-a-4-4df"
   },
-  "/docs/module1/chapter3-764": {
+  "/docs/module1/1-learning-in-physical-systems-962": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-1-chapter-3798-217"
+    "content": "content---docs-module-1-1-learning-in-physical-systems-6-d-0-2a9"
   },
-  "/docs/module1/chapter4-674": {
+  "/docs/module1/1-sensorimotor-coordination-bf9": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-1-chapter-46-d-0-bc6"
+    "content": "content---docs-module-1-1-sensorimotor-coordination-149-5dd"
   },
-  "/docs/module2/chapter5-aba": {
+  "/docs/module2/2-human-robot-interaction-663": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-2-chapter-5-b-92-e9d"
+    "content": "content---docs-module-2-2-human-robot-interactiondce-a2b"
   },
-  "/docs/module2/chapter6-c01": {
+  "/docs/module2/2-humanoid-robot-platforms-535": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-2-chapter-6-dee-57f"
+    "content": "content---docs-module-2-2-humanoid-robot-platformsb-92-58b"
   },
-  "/docs/module2/chapter7-1e3": {
+  "/docs/module2/2-locomotion-and-gait-control-771": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-2-chapter-7-cdf-507"
+    "content": "content---docs-module-2-2-locomotion-and-gait-controldee-bb6"
   },
-  "/docs/module2/chapter8-241": {
+  "/docs/module2/2-manipulation-and-grasping-4bb": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-2-chapter-8-dce-0da"
+    "content": "content---docs-module-2-2-manipulation-and-graspingcdf-fc3"
   },
-  "/docs/module3/chapter10-11a": {
+  "/docs/module3/3-embodied-learning-9a1": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-3-chapter-1036-f-1bc"
+    "content": "content---docs-module-3-3-embodied-learningedc-70d"
   },
-  "/docs/module3/chapter11-fff": {
+  "/docs/module3/3-multi-robot-physical-ai-aba": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-3-chapter-11-edc-0d3"
+    "content": "content---docs-module-3-3-multi-robot-physical-aice-3-1d8"
   },
-  "/docs/module3/chapter12-9ca": {
+  "/docs/module3/3-physics-informed-neural-networks-34d": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-3-chapter-12-ce-3-17d"
+    "content": "content---docs-module-3-3-physics-informed-neural-networks-36-f-376"
   },
-  "/docs/module3/chapter9-c4b": {
+  "/docs/module3/3-sim-to-real-transfer-9f0": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-3-chapter-96-c-9-26b"
+    "content": "content---docs-module-3-3-sim-to-real-transfer-6-c-9-c6c"
   },
-  "/docs/module4/chapter13-ebe": {
+  "/docs/module4/4-future-directions-c07": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-4-chapter-13-b-49-742"
+    "content": "content---docs-module-4-4-future-directions-39-a-158"
   },
-  "/docs/module4/chapter14-f7a": {
+  "/docs/module4/4-industrial-physical-ai-22a": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-4-chapter-14-dff-caf"
+    "content": "content---docs-module-4-4-industrial-physical-aib-49-d56"
   },
-  "/docs/module4/chapter15-7cc": {
+  "/docs/module4/4-safety-and-ethics-in-physical-ai-279": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-4-chapter-1584-f-05e"
+    "content": "content---docs-module-4-4-safety-and-ethics-in-physical-ai-84-f-d62"
   },
-  "/docs/module4/chapter16-8b0": {
+  "/docs/module4/4-service-robotics-a95": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-4-chapter-1639-a-038"
+    "content": "content---docs-module-4-4-service-roboticsdff-057"
   },
   "/docs/references-044": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -150,5 +150,12 @@
   "/docs/test-cf7": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-test-4-af-7e5"
+  },
+  "/-2e1": {
+    "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",
+    "__context": {
+      "plugin": "plugin---a-74-9d6"
+    },
+    "config": "config---5-e-9-4f3"
   }
 }

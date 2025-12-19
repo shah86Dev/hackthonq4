@@ -7,16 +7,15 @@ export default {
   "title": "Physical AI & Humanoid Robotics Textbook",
   "tagline": "A comprehensive university textbook for Physical AI and Humanoid Robotics",
   "favicon": "img/favicon.ico",
-  "url": "https://your-gh-pages-url.github.io",
+  "url": "https://hackthonq4.vercel.app",
   "baseUrl": "/",
-  "organizationName": "your-org",
-  "projectName": "physical-ai-textbook",
-  "onBrokenLinks": "throw",
+  "organizationName": "shah86dev",
+  "projectName": "hackthonq4",
+  "onBrokenLinks": "warn",
   "i18n": {
     "defaultLocale": "en",
     "locales": [
-      "en",
-      "ur"
+      "en"
     ],
     "path": "i18n",
     "localeConfigs": {}
@@ -42,7 +41,9 @@ export default {
       "title": "Physical AI Textbook",
       "logo": {
         "alt": "Physical AI & Humanoid Robotics Logo",
-        "src": "img/logo.svg"
+        "src": "img/logo.svg",
+        "href": "/",
+        "target": "_self"
       },
       "items": [
         {
@@ -52,25 +53,22 @@ export default {
           "label": "Textbook"
         },
         {
-          "to": "/chapters",
-          "label": "Chapters",
-          "position": "left"
+          "type": "docSidebar",
+          "sidebarId": "textbookSidebar",
+          "position": "left",
+          "label": "Chapters"
         },
         {
-          "to": "/labs",
-          "label": "Labs",
-          "position": "left"
+          "type": "doc",
+          "docId": "lab-manual",
+          "position": "left",
+          "label": "Labs"
         },
         {
-          "to": "/quizzes",
-          "label": "Quizzes",
-          "position": "left"
-        },
-        {
-          "type": "localeDropdown",
-          "position": "right",
-          "dropdownItemsBefore": [],
-          "dropdownItemsAfter": []
+          "type": "doc",
+          "docId": "assessments/assessments",
+          "position": "left",
+          "label": "Quizzes"
         },
         {
           "href": "https://github.com/your-username/physical-ai-textbook",
@@ -92,11 +90,11 @@ export default {
             },
             {
               "label": "Labs",
-              "to": "/labs"
+              "to": "/docs/lab-manual"
             },
             {
               "label": "Quizzes",
-              "to": "/quizzes"
+              "to": "/docs/assessments/assessments"
             }
           ]
         },
@@ -127,7 +125,7 @@ export default {
           ]
         }
       ],
-      "copyright": "Copyright © 2025 Physical AI & Humanoid Robotics Textbook. Built with Docusaurus."
+      "copyright": "Copyright © 2025 Physical AI & Humanoid Robotics Textbook. Built With Claude."
     },
     "prism": {
       "theme": {
