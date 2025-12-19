@@ -113,3 +113,5 @@ chatbot/nyc_output/
 .pyo
 .pycache/
 __pycache__/
+.vercel
+.env*.local

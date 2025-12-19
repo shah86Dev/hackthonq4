@@ -1,37 +1,40 @@
-name: Deploy to GitHub Pages
+name: Deploy Docusaurus to Vercel
 
 on:
   push:
-    branches: [main]
-  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
   deploy:
-    name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: npm
 
       - name: Install dependencies
-        run: npm ci
-        working-directory: frontend
+        run: npm install
 
-      - name: Build website
+      - name: Build Docusaurus
         run: npm run build
-        working-directory: frontend
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./frontend/build
-          # The following lines assign commit authorship to the official
-          # GH-Actions bot for deploys from main branch.
-          # For deploys from other branches, commit authorship will be assigned
-          # to the initiator of the workflow run
-          user_name: github-actions[bot]
-          user_email: 41898282+github-actions[bot]@users.noreply.github.com
+      - name: Verify index.html exists
+        run: |
+          if [ ! -f build/index.html ]; then
+            echo "❌ build/index.html missing. Aborting deploy."
+            exit 1
+          fi
+
+      - name: Deploy to Vercel
+        run: |
+          npx vercel deploy --prod \
+            --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}

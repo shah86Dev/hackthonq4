@@ -1,0 +1,66 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: 'frontend/package-lock.json'
+
+    - name: Install Vercel CLI
+      run: npm install -g vercel@latest
+
+    - name: Navigate to frontend and pull Vercel environment
+      run: |
+        cd frontend
+        if [ "${{ github.event_name }}" = "push" ] && [ "${{ github.ref }}" = "refs/heads/main" ]; then
+          vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+        else
+          vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+        fi
+
+    - name: Install dependencies in frontend
+      run: npm install
+      working-directory: frontend
+
+    - name: Build project for production
+      run: npm run build
+      working-directory: frontend
+      env:
+        NODE_ENV: production
+
+    - name: Deploy to Vercel
+      run: |
+        cd frontend
+        if [ "${{ github.event_name }}" = "push" ] && [ "${{ github.ref }}" = "refs/heads/main" ]; then
+          vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+        else
+          vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+        fi
+      env:
+        VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+        VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+    - name: Verify deployment
+      run: |
+        echo "Deployment completed successfully!"
+        echo "Check your Vercel dashboard for the deployment status."
