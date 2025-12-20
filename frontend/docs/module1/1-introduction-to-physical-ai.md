@@ -4,9 +4,13 @@ title: Introduction to Physical AI
 sidebar_label: Introduction to Physical AI
 ---
 
+import FloatingChatButton from '@site/src/components/FloatingChatButton';
+
 # Introduction to Physical AI
 
 Bridging Artificial Intelligence and Physical Systems
+
+<FloatingChatButton title="Chapter Assistant" description="Ask questions about this chapter content" />
 
 ## Learning Outcomes
 

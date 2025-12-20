@@ -4,9 +4,13 @@ title: Embodied Cognition
 sidebar_label: Embodied Cognition
 ---
 
+import FloatingChatButton from '@site/src/components/FloatingChatButton';
+
 # Embodied Cognition
 
 How Body Shape and Physics Influence Intelligence
+
+<FloatingChatButton title="Chapter Assistant" description="Ask questions about this chapter content" />
 
 ## Learning Outcomes
 

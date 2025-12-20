@@ -4,9 +4,13 @@ title: Sensorimotor Coordination
 sidebar_label: Sensorimotor Coordination
 ---
 
+import FloatingChatButton from '@site/src/components/FloatingChatButton';
+
 # Sensorimotor Coordination
 
 Perception and Action in Physical Systems
+
+<FloatingChatButton title="Chapter Assistant" description="Ask questions about this chapter content" />
 
 ## Learning Outcomes
 
