@@ -26,6 +26,9 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
+/* Chatbot styles */
+@import url('./chatbot.css');
+
 html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }

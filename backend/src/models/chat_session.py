@@ -9,7 +9,7 @@ class ChatSession(Base):
     user_id = Column(Integer, nullable=True)  # Nullable for anonymous users
     session_token = Column(String, nullable=False)  # For anonymous sessions
     messages = Column(JSON)  # Array of message objects
-    metadata = Column(JSON)  # Additional session metadata
+    session_metadata = Column(JSON)  # Additional session metadata
 
 
 class ChatMessage(Base):
@@ -20,4 +20,4 @@ class ChatMessage(Base):
     content = Column(Text, nullable=False)  # Message content
     source_chunks = Column(JSON)  # Array of content chunk IDs used for response
     is_grounding_valid = Column(Boolean, default=True)  # Whether response is properly grounded in textbook
-    metadata = Column(JSON)  # Additional message metadata
+    message_metadata = Column(JSON)  # Additional message metadata

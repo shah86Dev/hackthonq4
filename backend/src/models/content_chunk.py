@@ -11,6 +11,6 @@ class ContentChunk(Base):
     content_urdu = Column(Text)  # Urdu translation
     embedding = Column(JSON)  # Vector embedding (stored as JSON array)
     chunk_type = Column(String, default="theory")  # theory, lab, quiz, reference
-    metadata = Column(JSON)  # For AI indexing
+    chunk_metadata = Column(JSON)  # For AI indexing
     source_start_pos = Column(Integer, default=0)  # Start position in source document
     source_end_pos = Column(Integer, default=0)  # End position in source document

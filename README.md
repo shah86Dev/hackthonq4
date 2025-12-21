@@ -44,7 +44,10 @@ The system consists of multiple interconnected services:
 - Instructor resources and lab manuals
 
 ### AI Integration
-- RAG chatbot with textbook-grounded responses
+- Book-Embedded RAG Chatbot with OpenAI integration
+- PDF/Markdown document upload and processing
+- Vector database storage with Qdrant Cloud
+- Selected text interaction capability
 - Content personalization engine
 - Automated chapter generation
 
@@ -117,20 +120,44 @@ docker-compose up --build
 For development, you can run services individually:
 
 ```bash
-# Backend
+# Method 1: Using the startup script (recommended)
+python start_system.py --install  # Install dependencies
+python start_system.py            # Start both backend and frontend
+
+# Method 2: Manual setup
+# Backend (includes RAG API)
 cd backend
 pip install -r requirements.txt
-uvicorn src.main:app --reload
-
-# Chatbot
-cd chatbot
-pip install -r requirements.txt
-python main.py
+uvicorn src.api.main:app --reload
 
 # Frontend
 cd frontend
 npm install
 npm start
+```
+
+### Testing the RAG Chatbot
+Once the system is running:
+
+1. Upload a book using the upload endpoint:
+```bash
+curl -X POST "http://localhost:8000/api/v1/upload/book" \
+  -F "file=@your-book.pdf" \
+  -F "title=Your Book Title" \
+  -F "version=1.0" \
+  -F "book_id=12345678-1234-5678-1234-567812345678"
+```
+
+2. Use the chat interface at http://localhost:3000/chat or call the API directly:
+```bash
+curl -X POST "http://localhost:8000/chat" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "question": "What is this book about?",
+    "session_id": "test-session",
+    "language": "en",
+    "book_id": "12345678-1234-5678-1234-567812345678"
+  }'
 ```
 
 ## Deployment

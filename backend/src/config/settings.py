@@ -4,7 +4,7 @@ from typing import Optional
 
 class Settings(BaseSettings):
     # Database settings
-    database_url: str = "postgresql://user:password@localhost/book_rag"
+    database_url: str
 
     # Qdrant settings
     qdrant_url: str = "http://localhost:6333"
@@ -34,13 +34,12 @@ class Settings(BaseSettings):
     access_token_expire_minutes: int = 30
 
     # Book processing
-    chunk_size: int = 500
-    chunk_overlap: float = 0.1
+    chunk_size: int = 750  # Within the 500-1000 range specified in the spec
+    chunk_overlap: int = 200  # 200 character overlap as specified in the spec
     max_book_size: int = 1000000  # 1 million characters
     top_k_chunks: int = 5
 
-    class Config:
-        env_file = ".env"
+    model_config = {"env_file": ".env", "extra": "allow"}
 
 
 settings = Settings()

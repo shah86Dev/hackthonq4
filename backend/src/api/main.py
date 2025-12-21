@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from .endpoints import ingest, query, health
+from .endpoints import ingest, query, health, chat, upload
 from .middleware import add_middleware
 from .error_handlers import add_exception_handlers
 from src.config.settings import settings
@@ -20,6 +20,8 @@ app = add_exception_handlers(app)
 # Include API routers
 app.include_router(ingest.router, prefix="/api/v1", tags=["ingestion"])
 app.include_router(query.router, prefix="/api/v1", tags=["query"])
+app.include_router(chat.router, prefix="/api/v1", tags=["chat"])
+app.include_router(upload.router, prefix="/api/v1", tags=["upload"])
 app.include_router(health.router, prefix="/api/v1", tags=["health"])
 
 

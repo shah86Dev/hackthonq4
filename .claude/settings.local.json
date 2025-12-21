@@ -5,7 +5,11 @@
       "Bash(alembic -c backend/alembic.ini revision --autogenerate -m \"Initial database schema for Book-Embedded RAG Chatbot\")",
       "Bash(git add frontend/src/pages/index.js)",
       "Bash(git push origin main)",
-      "Bash(git add .)"
+      "Bash(git add .)",
+      "Bash(if Test-Path \"specs/003-book-rag-chatbot/checklists\")",
+      "Bash(then Get-ChildItem \"specs/003-book-rag-chatbot/checklists\" -Recurse -File)",
+      "Bash(else Write-Host \"No checklists directory found\")",
+      "Bash(fi)"
     ]
   }
 }

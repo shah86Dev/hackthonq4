@@ -52,6 +52,13 @@ const sidebars = {
         'instructor-guide',
         'lab-manual'
       ],
+    },
+    {
+      type: 'category',
+      label: 'AI Assistant',
+      items: [
+        'chatbot/introduction'
+      ],
     }
   ],
 };

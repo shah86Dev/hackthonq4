@@ -1,0 +1,23 @@
+/* Additional styles for the chatbot if needed */
+.chatbot-container {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+/* Ensure the chatbot looks good in dark mode */
+html[data-theme='dark'] .chatbot-container {
+  border: 1px solid #454a53;
+}
+
+html[data-theme='dark'] .chatbot-messages {
+  background-color: #1b1b1d;
+}
+
+html[data-theme='dark'] .assistant {
+  background-color: #242526;
+  border: 1px solid #454a53;
+}
+
+html[data-theme='dark'] .typing-indicator span {
+  background-color: #aaa;
+}

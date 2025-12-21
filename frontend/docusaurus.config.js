@@ -119,6 +119,10 @@ const config = {
                 label: 'Quizzes',
                 to: '/docs/assessments/assessments',
               },
+              {
+                label: 'AI Assistant',
+                to: '/docs/chatbot/introduction',
+              },
             ],
           },
           {

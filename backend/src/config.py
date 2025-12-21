@@ -4,18 +4,18 @@ from typing import Optional
 
 class Settings(BaseSettings):
     # Database settings
-    database_url: str = "postgresql://user:password@localhost/dbname"
+    database_url: str
 
     # Qdrant settings
     qdrant_url: str = "http://localhost:6333"
     qdrant_api_key: Optional[str] = None
 
     # OpenAI settings
-    openai_api_key: str = ""
+    openai_api_key: str
     openai_model: str = "gpt-3.5-turbo"
 
     # Auth settings
-    secret_key: str = "your-secret-key-here"
+    secret_key: str
     algorithm: str = "HS256"
     access_token_expire_minutes: int = 30
 

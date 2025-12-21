@@ -1,0 +1,48 @@
+.chatPage {
+  width: 100%;
+}
+
+.chatContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.chatContainer h1 {
+  text-align: center;
+  color: #242526;
+  margin-bottom: 1rem;
+}
+
+.description {
+  text-align: center;
+  color: #525355;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.chatBotWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .chatContainer {
+    padding: 1rem 0;
+  }
+
+  .chatContainer h1 {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .chatBotWrapper {
+    padding: 0 1rem;
+  }
+}

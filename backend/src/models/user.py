@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Boolean, Text, DateTime, func
+from sqlalchemy import Column, String, Boolean, Text, DateTime, Integer, func
 from sqlalchemy.orm import relationship
 from .base import Base
 
@@ -57,7 +57,7 @@ class LearningEvent(Base):
     event_type = Column(String, nullable=False)  # chapter_view, lab_start, lab_complete, quiz_start, quiz_complete
     entity_id = Column(String, nullable=False)  # ID of the entity involved
     entity_type = Column(String, nullable=False)  # chapter, lab, quiz
-    metadata = Column(String)  # JSON string for additional event data
+    event_metadata = Column(String)  # JSON string for additional event data
 
     # Relationships
     user = relationship("User", back_populates="learning_events")

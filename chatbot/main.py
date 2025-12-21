@@ -1,3 +1,4 @@
+
 import uvicorn
 import asyncio
 import os
@@ -9,6 +10,11 @@ load_dotenv()
 def main():
     """Main entry point for the chatbot application"""
 
+    # Change to backend directory to access the API
+    original_dir = os.getcwd()
+    backend_dir = os.path.join(original_dir, "backend")
+    os.chdir(backend_dir)
+
     # Set environment variables for Qdrant if not set
     qdrant_host = os.getenv("QDRANT_HOST", "localhost")
     qdrant_port = os.getenv("QDRANT_PORT", "6333")
@@ -18,7 +24,7 @@ def main():
 
     # Run the FastAPI application with uvicorn
     uvicorn.run(
-        "src.app:app",
+        "src.api.main:app",
         host="0.0.0.0",
         port=8001,  # Using port 8001 to differentiate from other services
         reload=True,  # Set to False in production

@@ -14,7 +14,7 @@ class Chapter(Base):
     learning_objectives = Column(JSON)  # Array of learning objectives
     prerequisites = Column(JSON)  # Array of chapter IDs that are prerequisites
     estimated_reading_time = Column(Integer)  # in minutes
-    metadata = Column(JSON)  # For AI indexing
+    chapter_metadata = Column(JSON)  # For AI indexing
 
     # Relationships
     lab_exercises = relationship("LabExercise", back_populates="chapter")

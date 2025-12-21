@@ -1,0 +1,259 @@
+.embeddedChatContainer {
+  max-width: 100%;
+  margin: 2rem 0;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  font-family: inherit;
+}
+
+.embeddedChatHeader {
+  background-color: #25c2a0;
+  color: white;
+  padding: 12px 16px;
+  text-align: center;
+}
+
+.embeddedChatHeader h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.embeddedChatHeader p {
+  margin: 4px 0 0 0;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.selectedTextIndicator {
+  background-color: #e8f4fd;
+  border: 1px solid #25c2a0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 8px 12px 0;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clearSelectionBtn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #666;
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+.clearSelectionBtn:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.embeddedChatMessages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #fafafa;
+}
+
+.embeddedChatWelcome {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.embeddedChatWelcome h4 {
+  margin-top: 0;
+  color: #25c2a0;
+  margin-bottom: 8px;
+}
+
+.embeddedChatWelcome p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.embeddedChatMessage {
+  max-width: 90%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.user {
+  align-self: flex-end;
+  background-color: #25c2a0;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.assistant {
+  align-self: flex-start;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-bottom-left-radius: 4px;
+}
+
+.messageContent {
+  margin-bottom: 4px;
+}
+
+.messageRole {
+  font-size: 0.7rem;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+.user .messageRole {
+  text-align: right;
+}
+
+.assistant .messageRole {
+  text-align: left;
+}
+
+.messageSources {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed #ddd;
+  font-size: 0.8rem;
+}
+
+.messageSources summary {
+  cursor: pointer;
+  color: #25c2a0;
+  font-weight: bold;
+}
+
+.messageSources ul {
+  margin: 4px 0;
+  padding-left: 16px;
+}
+
+.messageSources li {
+  margin-bottom: 4px;
+  word-break: break-word;
+}
+
+.typingIndicator {
+  display: flex;
+  gap: 4px;
+  justify-content: flex-start;
+}
+
+.typingIndicator span {
+  width: 7px;
+  height: 7px;
+  background-color: #999;
+  border-radius: 50%;
+  display: inline-block;
+  animation: typing 1.4s infinite ease-in-out both;
+}
+
+.typingIndicator span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.typingIndicator span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes typing {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.embeddedChatInputForm {
+  display: flex;
+  padding: 12px;
+  background-color: white;
+  border-top: 1px solid #ddd;
+}
+
+.embeddedChatInputForm textarea {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  resize: none;
+  max-height: 80px;
+  font-family: inherit;
+  margin-right: 8px;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.embeddedChatInputForm textarea:focus {
+  border-color: #25c2a0;
+  box-shadow: 0 0 0 2px rgba(37, 194, 160, 0.2);
+}
+
+.sendButton {
+  padding: 10px 16px;
+  background-color: #25c2a0;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.sendButton:hover:not(:disabled) {
+  background-color: #20a68a;
+}
+
+.sendButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Responsive design for embedded chatbot */
+@media (max-width: 768px) {
+  .embeddedChatContainer {
+    height: 400px;
+    margin: 1.5rem 0;
+  }
+
+  .embeddedChatMessage {
+    max-width: 95%;
+  }
+
+  .selectedTextIndicator {
+    margin: 8px;
+    font-size: 0.8rem;
+  }
+
+  .embeddedChatInputForm textarea {
+    font-size: 0.85rem;
+  }
+}

@@ -14,7 +14,7 @@ class Quiz(Base):
     randomize_questions = Column(Boolean, default=True)
     feedback_mode = Column(String, default="immediate")  # immediate, delayed, none
     difficulty_level = Column(String, default="beginner")  # beginner, intermediate, advanced
-    metadata = Column(JSON)  # Additional metadata
+    quiz_metadata = Column(JSON)  # Additional metadata
 
     # Relationships
     chapter = relationship("Chapter", back_populates="quizzes")
@@ -33,4 +33,4 @@ class Question(Base):
     explanation_urdu = Column(Text)  # Urdu translation
     difficulty_level = Column(String, default="beginner")  # beginner, intermediate, advanced
     tags = Column(JSON)  # Array of topic tags
-    metadata = Column(JSON)  # Additional metadata
+    question_metadata = Column(JSON)  # Additional metadata

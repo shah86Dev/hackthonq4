@@ -51,7 +51,7 @@ class RetrievalService:
             chunk_data = {
                 "chunk_id": result.payload.get("chunk_id"),
                 "text": result.payload.get("text"),
-                "chapter": result.payload.get("chapter"),
+                "chapter": result.payload.get("chapter_id"),  # Using chapter_id from ingestion
                 "section": result.payload.get("section"),
                 "page_range": result.payload.get("page_range"),
                 "similarity_score": result.score

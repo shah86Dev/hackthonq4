@@ -18,7 +18,7 @@ class LabExercise(Base):
     estimated_duration = Column(Integer)  # in minutes
     validation_criteria = Column(JSON)  # Array of validation criteria
     assets = Column(JSON)  # Array of file paths to required assets
-    metadata = Column(JSON)  # Additional metadata
+    exercise_metadata = Column(JSON)  # Additional metadata
 
     # Relationships
     chapter = relationship("Chapter", back_populates="lab_exercises")

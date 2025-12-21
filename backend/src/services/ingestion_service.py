@@ -7,7 +7,7 @@ from qdrant_client import QdrantClient
 from qdrant_client.http.models import PointStruct, VectorParams, Distance
 from openai import OpenAI
 from src.models.book import Book
-from src.models.chunk import Chunk
+from src.models.content_chunk import ContentChunk
 from src.config.settings import settings
 
 
@@ -33,7 +33,7 @@ class IngestionService:
                 vectors_config=VectorParams(size=1536, distance=Distance.COSINE),
             )
 
-    def chunk_text(self, text: str, chunk_size: int = None, overlap: float = None) -> List[str]:
+    def chunk_text(self, text: str, chunk_size: int = None, overlap: int = None) -> List[str]:
         """
         Split text into chunks of specified size with overlap
         """
@@ -42,16 +42,25 @@ class IngestionService:
         if overlap is None:
             overlap = settings.chunk_overlap
 
-        words = text.split()
+        # Use character-based chunking to match the spec requirements (500-1000 chars with 200 char overlap)
         chunks = []
-        overlap_size = int(chunk_size * overlap)
-
         start = 0
-        while start < len(words):
-            end = min(start + chunk_size, len(words))
-            chunk = " ".join(words[start:end])
-            chunks.append(chunk)
-            start = end - overlap_size
+        text_length = len(text)
+
+        while start < text_length:
+            end = start + chunk_size
+            if end > text_length:
+                end = text_length
+
+            chunk = text[start:end]
+            if len(chunk.strip()) > 0:  # Only add non-empty chunks
+                chunks.append(chunk)
+
+            # Move start by (chunk_size - overlap) to create overlap
+            start = min(end, start + chunk_size - overlap)
+
+            if start >= text_length:
+                break
 
         return chunks
 
@@ -87,20 +96,34 @@ class IngestionService:
         chunk_records = []
         qdrant_points = []
 
+        # Recalculate start positions for each chunk
+        current_start = 0
         for i, chunk_text in enumerate(chunks):
             chunk_id = f"{book_id}-{i}"
+
+            # Calculate the actual position in the original text
+            actual_start = content.find(chunk_text, current_start)
+            if actual_start == -1:
+                actual_start = current_start  # fallback if exact match not found
+            actual_end = actual_start + len(chunk_text)
+            current_start = actual_start + 1  # Move past this chunk for next search
 
             # Generate embedding
             embedding = self.generate_embedding(chunk_text)
 
             # Create chunk record for database
-            chunk_record = Chunk(
-                book_id=book_id,
-                chapter=f"Chapter {i//10 + 1}",  # Simple chapter assignment
-                section=f"Section {i}",
-                page_range=f"{i*2}-{i*2+1}",  # Simple page range assignment
-                text=chunk_text,
-                chunk_id=chunk_id
+            chunk_record = ContentChunk(
+                chapter_id=str(book_id),  # Use book_id as chapter_id for book-level chunks
+                content=chunk_text,
+                embedding=embedding,
+                chunk_type="theory",
+                chunk_metadata={
+                    "book_id": str(book_id),
+                    "section": f"Section {i}",
+                    "page_range": f"{i*2}-{i*2+1}"
+                },
+                source_start_pos=actual_start,  # Actual position in source text
+                source_end_pos=actual_end  # End position in source text
             )
             chunk_records.append(chunk_record)
 
@@ -111,7 +134,7 @@ class IngestionService:
                 payload={
                     "book_id": str(book_id),
                     "chunk_id": chunk_id,
-                    "chapter": f"Chapter {i//10 + 1}",
+                    "chapter_id": str(book_id),  # Use book_id as chapter identifier
                     "section": f"Section {i}",
                     "page_range": f"{i*2}-{i*2+1}",
                     "text": chunk_text
