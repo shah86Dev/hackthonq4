@@ -4,9 +4,13 @@ title: Service Robotics
 sidebar_label: Service Robotics
 ---
 
+import FloatingChatButton from '@site/src/components/FloatingChatButton';
+
 # Service Robotics
 
 Assistive and Domestic Applications
+
+<FloatingChatButton title="Chapter Assistant" description="Ask questions about this chapter content" />
 
 ## Learning Outcomes
 

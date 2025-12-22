@@ -2,7 +2,7 @@ from fastapi import APIRouter, UploadFile, File, HTTPException, Depends
 from sqlalchemy.orm import Session
 from typing import Optional
 import uuid
-from src.config.database import get_db
+from src.database import get_db
 from src.services.document_processor import DocumentProcessor
 from src.services.ingestion_service import IngestionService
 from pydantic import BaseModel

@@ -20,5 +20,9 @@
   "previous": {
     "title": "Instructor Guide",
     "permalink": "/docs/instructor-guide"
+  },
+  "next": {
+    "title": "RAG Chatbot Introduction",
+    "permalink": "/docs/chatbot/introduction"
   }
 }

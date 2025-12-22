@@ -77,23 +77,29 @@ Examples of foundational tasks (adjust based on your project):
 
 **Goal**: [Brief description of what this story delivers]
 
+**Constitutional Alignment**: [How this story aligns with constitutional principles]
+- Accuracy-First Design: [How the story ensures grounded responses]
+- Scalability Architecture: [How the story supports scalability]
+- Security-First Integration: [How the story implements security measures]
+- User Experience Focus: [How the story enhances user experience]
+
 **Independent Test**: [How to verify this story works on its own]
 
 ### Tests for User Story 1 (OPTIONAL - only if tests requested) ⚠️
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T010 [P] [US1] Contract test for [endpoint] in tests/contract/test_[name].py
-- [ ] T011 [P] [US1] Integration test for [user journey] in tests/integration/test_[name].py
+- [ ] T010 [P] [US1] Contract test for [endpoint] in tests/contract/test_[name].py (Constitution: Testing Excellence)
+- [ ] T011 [P] [US1] Integration test for [user journey] in tests/integration/test_[name].py (Constitution: Testing Excellence)
 
 ### Implementation for User Story 1
 
-- [ ] T012 [P] [US1] Create [Entity1] model in src/models/[entity1].py
-- [ ] T013 [P] [US1] Create [Entity2] model in src/models/[entity2].py
-- [ ] T014 [US1] Implement [Service] in src/services/[service].py (depends on T012, T013)
-- [ ] T015 [US1] Implement [endpoint/feature] in src/[location]/[file].py
-- [ ] T016 [US1] Add validation and error handling
-- [ ] T017 [US1] Add logging for user story 1 operations
+- [ ] T012 [P] [US1] Create [Entity1] model in src/models/[entity1].py (Constitution: Data Integrity and Traceability)
+- [ ] T013 [P] [US1] Create [Entity2] model in src/models/[entity2].py (Constitution: Data Integrity and Traceability)
+- [ ] T014 [US1] Implement [Service] in src/services/[service].py (depends on T012, T013) (Constitution: Token-Efficient Architecture)
+- [ ] T015 [US1] Implement [endpoint/feature] in src/[location]/[file].py (Constitution: API-First Design)
+- [ ] T016 [US1] Add validation and error handling (Constitution: Security-First Integration)
+- [ ] T017 [US1] Add logging for user story 1 operations (Constitution: RAG Pipeline Excellence)
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -148,14 +154,15 @@ Examples of foundational tasks (adjust based on your project):
 
 ## Phase N: Polish & Cross-Cutting Concerns
 
-**Purpose**: Improvements that affect multiple user stories
+**Purpose**: Improvements that affect multiple user stories and ensure constitutional compliance
 
-- [ ] TXXX [P] Documentation updates in docs/
-- [ ] TXXX Code cleanup and refactoring
-- [ ] TXXX Performance optimization across all stories
-- [ ] TXXX [P] Additional unit tests (if requested) in tests/unit/
-- [ ] TXXX Security hardening
-- [ ] TXXX Run quickstart.md validation
+- [ ] TXXX [P] Documentation updates in docs/ (Constitution: Reproducibility)
+- [ ] TXXX Code cleanup and refactoring (Constitution: Token-Efficient Architecture)
+- [ ] TXXX Performance optimization across all stories (Constitution: Performance Optimization)
+- [ ] TXXX [P] Additional unit tests (if requested) in tests/unit/ (Constitution: Testing Excellence)
+- [ ] TXXX Security hardening (Constitution: Security-First Integration)
+- [ ] TXXX Run quickstart.md validation (Constitution: Reproducibility)
+- [ ] TXXX Constitutional compliance verification (Constitution: All Principles)
 
 ---
 

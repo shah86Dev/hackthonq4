@@ -1,161 +1,129 @@
 {
-  "/__docusaurus/debug-5ff": {
-    "__comp": "__comp---theme-debug-config-23-a-2ff",
+  "/chat-07b": {
+    "__comp": "e8276818",
     "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
-  "/__docusaurus/debug/config-5ba": {
-    "__comp": "__comp---theme-debug-config-23-a-2ff",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
-  "/__docusaurus/debug/content-a2b": {
-    "__comp": "__comp---theme-debug-contentba-8-ce7",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
+      "plugin": "a7456010"
     },
-    "__props": "__props---docusaurus-debug-content-3-c-0-be2"
+    "config": "5e9f5e1a"
   },
-  "/__docusaurus/debug/globalData-c3c": {
-    "__comp": "__comp---theme-debug-global-dataede-0fa",
+  "/docs-8f8": {
+    "__comp": "5e95c892",
     "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
+      "plugin": "aba21aa0"
     }
   },
-  "/__docusaurus/debug/metadata-156": {
-    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
+  "/docs-07c": {
+    "__comp": "a7bd4aaa",
+    "__props": "0058b4c6"
   },
-  "/__docusaurus/debug/registry-88c": {
-    "__comp": "__comp---theme-debug-registry-679-501",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
-  "/__docusaurus/debug/routes-000": {
-    "__comp": "__comp---theme-debug-routes-946-699",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
-  "/docs-b96": {
-    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
-    "__context": {
-      "plugin": "plugin---docsaba-d7c"
-    }
-  },
-  "/docs-9c3": {
-    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
-    "__props": "__props---docs-005-788"
-  },
-  "/docs-d0c": {
-    "__comp": "__comp---theme-doc-roota-94-67a"
+  "/docs-25d": {
+    "__comp": "a94703ab"
   },
   "/docs/assessments/-79a": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-assessments-3-af-721"
+    "__comp": "17896441",
+    "content": "3af89be6"
+  },
+  "/docs/chatbot/introduction-142": {
+    "__comp": "17896441",
+    "content": "a2abf5c6"
   },
   "/docs/glossary-2d4": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-glossarye-74-cec"
+    "__comp": "17896441",
+    "content": "e747ec83"
   },
   "/docs/instructor-guide-d08": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-instructor-guide-871-7d5"
+    "__comp": "17896441",
+    "content": "8713521e"
   },
   "/docs/intro-853": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-intro-0-e-3-be1"
+    "__comp": "17896441",
+    "content": "0e384e19"
   },
   "/docs/lab-manual-4e8": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-lab-manual-668-5a4"
+    "__comp": "17896441",
+    "content": "6680ca80"
   },
   "/docs/labs/lab-manual-4a8": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-labs-lab-manuald-7-a-ece"
+    "__comp": "17896441",
+    "content": "d7a385e0"
   },
   "/docs/module1/1-embodied-cognition-350": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-1-1-embodied-cognition-798-617"
+    "__comp": "17896441",
+    "content": "798d4139"
   },
   "/docs/module1/1-introduction-to-physical-ai-42b": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-1-1-introduction-to-physical-ai-5-a-4-4df"
+    "__comp": "17896441",
+    "content": "5a4cae65"
   },
   "/docs/module1/1-learning-in-physical-systems-962": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-1-1-learning-in-physical-systems-6-d-0-2a9"
+    "__comp": "17896441",
+    "content": "6d0f1a0a"
   },
   "/docs/module1/1-sensorimotor-coordination-bf9": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-1-1-sensorimotor-coordination-149-5dd"
+    "__comp": "17896441",
+    "content": "14917c21"
   },
   "/docs/module2/2-human-robot-interaction-663": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-2-2-human-robot-interactiondce-a2b"
+    "__comp": "17896441",
+    "content": "dce715f1"
   },
   "/docs/module2/2-humanoid-robot-platforms-535": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-2-2-humanoid-robot-platformsb-92-58b"
+    "__comp": "17896441",
+    "content": "b9287e9a"
   },
   "/docs/module2/2-locomotion-and-gait-control-771": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-2-2-locomotion-and-gait-controldee-bb6"
+    "__comp": "17896441",
+    "content": "dee18f68"
   },
   "/docs/module2/2-manipulation-and-grasping-4bb": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-2-2-manipulation-and-graspingcdf-fc3"
+    "__comp": "17896441",
+    "content": "cdf77f31"
   },
   "/docs/module3/3-embodied-learning-9a1": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-3-3-embodied-learningedc-70d"
+    "__comp": "17896441",
+    "content": "edc2560d"
   },
   "/docs/module3/3-multi-robot-physical-ai-aba": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-3-3-multi-robot-physical-aice-3-1d8"
+    "__comp": "17896441",
+    "content": "ce3b71bf"
   },
   "/docs/module3/3-physics-informed-neural-networks-34d": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-3-3-physics-informed-neural-networks-36-f-376"
+    "__comp": "17896441",
+    "content": "36f5fb25"
   },
   "/docs/module3/3-sim-to-real-transfer-9f0": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-3-3-sim-to-real-transfer-6-c-9-c6c"
+    "__comp": "17896441",
+    "content": "6c9b400a"
   },
   "/docs/module4/4-future-directions-c07": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-4-4-future-directions-39-a-158"
+    "__comp": "17896441",
+    "content": "39a02450"
   },
   "/docs/module4/4-industrial-physical-ai-22a": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-4-4-industrial-physical-aib-49-d56"
+    "__comp": "17896441",
+    "content": "b498ff75"
   },
   "/docs/module4/4-safety-and-ethics-in-physical-ai-279": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-4-4-safety-and-ethics-in-physical-ai-84-f-d62"
+    "__comp": "17896441",
+    "content": "84f0937a"
   },
   "/docs/module4/4-service-robotics-a95": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-module-4-4-service-roboticsdff-057"
+    "__comp": "17896441",
+    "content": "dff9ebf4"
   },
   "/docs/references-044": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-references-33-a-ca4"
+    "__comp": "17896441",
+    "content": "33a69f45"
   },
   "/docs/test-cf7": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-test-4-af-7e5"
+    "__comp": "17896441",
+    "content": "4af26d8c"
   },
   "/-2e1": {
-    "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",
+    "__comp": "c4f5d8e4",
     "__context": {
-      "plugin": "plugin---a-74-9d6"
+      "plugin": "a7456010"
     },
-    "config": "config---5-e-9-4f3"
+    "config": "5e9f5e1a"
   }
 }

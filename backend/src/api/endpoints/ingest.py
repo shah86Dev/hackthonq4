@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import Session
 from uuid import UUID
 import uuid
-from src.config.database import get_db
+from src.database import get_db
 from src.services.ingestion_service import IngestionService
 from pydantic import BaseModel
 

@@ -4,9 +4,13 @@ title: Manipulation and Grasping
 sidebar_label: Manipulation and Grasping
 ---
 
+import FloatingChatButton from '@site/src/components/FloatingChatButton';
+
 # Manipulation and Grasping
 
 Dexterous Control of Robotic Hands
+
+<FloatingChatButton title="Chapter Assistant" description="Ask questions about this chapter content" />
 
 ## Learning Outcomes
 

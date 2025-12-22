@@ -4,9 +4,13 @@ title: Future Directions
 sidebar_label: Future Directions
 ---
 
+import FloatingChatButton from '@site/src/components/FloatingChatButton';
+
 # Future Directions
 
 Emerging Trends and Research Frontiers
+
+<FloatingChatButton title="Chapter Assistant" description="Ask questions about this chapter content" />
 
 ## Learning Outcomes
 

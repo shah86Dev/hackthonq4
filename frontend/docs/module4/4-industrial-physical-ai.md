@@ -4,9 +4,13 @@ title: Industrial Physical AI
 sidebar_label: Industrial Physical AI
 ---
 
+import FloatingChatButton from '@site/src/components/FloatingChatButton';
+
 # Industrial Physical AI
 
 Manufacturing and Automation Applications
+
+<FloatingChatButton title="Chapter Assistant" description="Ask questions about this chapter content" />
 
 ## Learning Outcomes
 

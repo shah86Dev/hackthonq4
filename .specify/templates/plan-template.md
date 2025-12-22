@@ -31,7 +31,95 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+### Compliance Verification
+
+1. **Accuracy-First Design**:
+   - [ ] Responses will be restricted to book content or user-selected text only
+   - [ ] All responses will be grounded in provided source material with proper citation
+   - [ ] Hallucinations will be avoided through strict context limitations
+
+2. **Scalability Architecture**:
+   - [ ] Using Qdrant for vector storage with efficient embedding processing
+   - [ ] Designed to handle growing content and user load
+   - [ ] Architecture handles large books (>500 pages) without performance degradation
+
+3. **Security-First Integration**:
+   - [ ] API keys for OpenAI, PostgreSQL, and Qdrant
+   - [ ] FastAPI with rate limiting implementation
+   - [ ] Proper authentication and authorization measures
+
+4. **User Experience Focus**:
+   - [ ] Support for both full-book and selected-text query modes
+   - [ ] Intuitive interfaces that integrate seamlessly into book viewing platforms
+   - [ ] Minimal disruption to the reading experience
+
+5. **Performance Optimization**:
+   - [ ] <2s response time target for 95% of requests
+   - [ ] Efficient handling of concurrent users
+   - [ ] Consistent performance across different query types
+
+6. **Spec-Driven Development**:
+   - [ ] Features derive from explicit specifications with measurable outcomes
+   - [ ] Clear requirements with testable acceptance criteria
+   - [ ] Defined success metrics
+
+7. **Token-Efficient Architecture**:
+   - [ ] Following constitutional requirement for token-efficient processing
+   - [ ] Heavy logic will execute in scripts, not in LLM context
+   - [ ] Only skill instructions and final outputs will enter context
+
+8. **Reproducibility**:
+   - [ ] All implementations deterministic and version-controlled
+   - [ ] Dependencies and configurations explicitly defined
+   - [ ] Proper documentation for consistent reproduction
+
+### Potential Violations and Justifications
+
+- [ ] List any potential constitutional violations and justifications here
+
+### Post-Design Constitution Re-check
+
+After implementing the detailed design:
+
+1. **Accuracy-First Design**:
+   - [ ] API enforces responses are grounded in book content only
+   - [ ] Response model includes proper citation information
+   - [ ] Context limitations are strictly enforced
+
+2. **Scalability Architecture**:
+   - [ ] Vector store supports required scale
+   - [ ] API supports concurrent user handling
+   - [ ] Rate limiting prevents resource exhaustion
+
+3. **Security-First Integration**:
+   - [ ] API endpoints follow security best practices
+   - [ ] Rate limiting implemented to prevent abuse
+   - [ ] Sensitive data properly handled in models
+
+4. **User Experience Focus**:
+   - [ ] API supports both full-book and selected-text queries
+   - [ ] Rich response model with citations and context
+   - [ ] Intuitive interfaces for seamless integration
+
+5. **Performance Optimization**:
+   - [ ] Response times measured and reported in API
+   - [ ] Chunked content enables efficient retrieval
+   - [ ] Health check endpoint monitors service performance
+
+6. **Spec-Driven Development**:
+   - [ ] API contract defines clear interfaces
+   - [ ] Response models include testable metrics
+   - [ ] Error handling patterns are standardized
+
+7. **Token-Efficient Architecture**:
+   - [ ] API minimizes response sizes with efficient data models
+   - [ ] Only necessary context is passed between components
+   - [ ] Heavy processing happens in dedicated services, not in API layer
+
+8. **Reproducibility**:
+   - [ ] API documented with OpenAPI format
+   - [ ] Data models fully specified with validation rules
+   - [ ] Implementation follows constitutional requirements
 
 ## Project Structure
 

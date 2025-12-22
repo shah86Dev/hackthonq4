@@ -4,9 +4,13 @@ title: Humanoid Robot Platforms
 sidebar_label: Humanoid Robot Platforms
 ---
 
+import FloatingChatButton from '@site/src/components/FloatingChatButton';
+
 # Humanoid Robot Platforms
 
 Hardware and Software Architectures
+
+<FloatingChatButton title="Chapter Assistant" description="Ask questions about this chapter content" />
 
 ## Learning Outcomes
 

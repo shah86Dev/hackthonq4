@@ -4,9 +4,13 @@ title: Safety and Ethics in Physical AI
 sidebar_label: Safety and Ethics in Physical AI
 ---
 
+import FloatingChatButton from '@site/src/components/FloatingChatButton';
+
 # Safety and Ethics in Physical AI
 
 Responsible Development and Deployment
+
+<FloatingChatButton title="Chapter Assistant" description="Ask questions about this chapter content" />
 
 ## Learning Outcomes
 

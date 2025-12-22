@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import Session
 import uuid
 from typing import List, Optional
-from src.config.database import get_db
+from src.database import get_db
 from src.services.retrieval_service import RetrievalService
 from src.services.generation_service import GenerationService
 from src.services.citation_service import CitationService

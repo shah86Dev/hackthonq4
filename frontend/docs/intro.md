@@ -82,4 +82,4 @@ This textbook is organized into 4 modules spanning 16 weeks:
 ## Additional Resources
 
 - [Lab Manuals](/docs/lab-manual)
-- [Assessments](/docs/assessments/assessments)
+- [Assessments](/docs/assessments)

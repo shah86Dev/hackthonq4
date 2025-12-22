@@ -4,9 +4,13 @@ title: Multi-Robot Physical AI
 sidebar_label: Multi-Robot Physical AI
 ---
 
+import FloatingChatButton from '@site/src/components/FloatingChatButton';
+
 # Multi-Robot Physical AI
 
 Coordinated Behavior in Physical Systems
+
+<FloatingChatButton title="Chapter Assistant" description="Ask questions about this chapter content" />
 
 ## Learning Outcomes
 

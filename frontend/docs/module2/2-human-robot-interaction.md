@@ -4,9 +4,13 @@ title: Human-Robot Interaction
 sidebar_label: Human-Robot Interaction
 ---
 
+import FloatingChatButton from '@site/src/components/FloatingChatButton';
+
 # Human-Robot Interaction
 
 Social Cognition and Communication
+
+<FloatingChatButton title="Chapter Assistant" description="Ask questions about this chapter content" />
 
 ## Learning Outcomes
 

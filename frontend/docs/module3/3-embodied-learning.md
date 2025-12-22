@@ -4,9 +4,13 @@ title: Embodied Learning
 sidebar_label: Embodied Learning
 ---
 
+import FloatingChatButton from '@site/src/components/FloatingChatButton';
+
 # Embodied Learning
 
 Learning Through Physical Interaction
+
+<FloatingChatButton title="Chapter Assistant" description="Ask questions about this chapter content" />
 
 ## Learning Outcomes
 

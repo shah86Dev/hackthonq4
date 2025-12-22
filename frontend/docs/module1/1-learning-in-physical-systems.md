@@ -4,9 +4,13 @@ title: Learning in Physical Systems
 sidebar_label: Learning in Physical Systems
 ---
 
+import FloatingChatButton from '@site/src/components/FloatingChatButton';
+
 # Learning in Physical Systems
 
 Adaptation and Control in Dynamic Environments
+
+<FloatingChatButton title="Chapter Assistant" description="Ask questions about this chapter content" />
 
 ## Learning Outcomes
 

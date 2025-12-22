@@ -4,9 +4,13 @@ title: Sim-to-Real Transfer
 sidebar_label: Sim-to-Real Transfer
 ---
 
+import FloatingChatButton from '@site/src/components/FloatingChatButton';
+
 # Sim-to-Real Transfer
 
 Bridging Simulation and Reality
+
+<FloatingChatButton title="Chapter Assistant" description="Ask questions about this chapter content" />
 
 ## Learning Outcomes
 

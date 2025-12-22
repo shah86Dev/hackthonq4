@@ -1,0 +1,201 @@
+openapi: 3.0.3
+info:
+  title: RAG-Enabled Agent API
+  description: API for the RAG-enabled agent that uses Claude for planning and executes skills
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+    description: Development server
+paths:
+  /query:
+    post:
+      summary: Process a user query through the agent
+      description: Submits a user query to the agent, which uses Claude to plan and route to appropriate skills
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserQuery'
+      responses:
+        '200':
+          description: Successful response from the agent
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgentResponse'
+        '400':
+          description: Invalid query format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /skills:
+    get:
+      summary: List available skills
+      description: Returns a list of all available skills that the agent can execute
+      responses:
+        '200':
+          description: List of available skills
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  skills:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SkillInfo'
+  /rag/documents:
+    post:
+      summary: Add a document to the RAG vector store
+      description: Uploads a document to be indexed in the vector store for RAG functionality
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - file
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: The document file to be added to the vector store
+      responses:
+        '200':
+          description: Document successfully added to vector store
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Document successfully added to vector store"
+                  document_id:
+                    type: string
+                    example: "doc-12345"
+        '400':
+          description: Invalid file format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /health:
+    get:
+      summary: Health check endpoint
+      description: Returns the health status of the agent service
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "healthy"
+                  timestamp:
+                    type: string
+                    format: date-time
+                    example: "2025-12-20T10:00:00Z"
+
+components:
+  schemas:
+    UserQuery:
+      type: object
+      required:
+        - query
+      properties:
+        query:
+          type: string
+          description: The user's query or request
+          example: "What is the capital of France?"
+        session_id:
+          type: string
+          description: Optional session identifier for conversation context
+          example: "session-12345"
+        context:
+          type: object
+          description: Optional additional context for the query
+          example:
+            previous_queries: ["What is France?"]
+
+    AgentResponse:
+      type: object
+      required:
+        - response
+        - query_id
+      properties:
+        response:
+          type: string
+          description: The agent's response to the user query
+          example: "The capital of France is Paris."
+        query_id:
+          type: string
+          description: Unique identifier for the processed query
+          example: "query-67890"
+        skill_used:
+          type: string
+          description: The skill that was used to process the query
+          example: "rag_search"
+        execution_time:
+          type: number
+          description: Time taken to process the query in seconds
+          format: float
+          example: 1.23
+        confidence:
+          type: number
+          description: Confidence score of the response (0-1)
+          format: float
+          example: 0.95
+
+    SkillInfo:
+      type: object
+      required:
+        - name
+        - description
+      properties:
+        name:
+          type: string
+          description: Unique identifier for the skill
+          example: "rag_search"
+        description:
+          type: string
+          description: Human-readable description of what the skill does
+          example: "Performs semantic search on the knowledge base"
+        parameters:
+          type: object
+          description: Expected parameters for the skill
+          example:
+            query: "string"
+            max_results: "integer"
+
+    ErrorResponse:
+      type: object
+      required:
+        - error
+      properties:
+        error:
+          type: string
+          description: Error message
+          example: "Invalid query format"
+        details:
+          type: string
+          description: Additional error details (optional)
+          example: "Query field is required"

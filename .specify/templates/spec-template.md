@@ -104,12 +104,23 @@
 
 <!--
   ACTION REQUIRED: Define measurable success criteria.
-  These must be technology-agnostic and measurable.
+  These must align with constitutional principles and be technology-agnostic and measurable.
 -->
 
 ### Measurable Outcomes
 
-- **SC-001**: [Measurable metric, e.g., "Users can complete account creation in under 2 minutes"]
-- **SC-002**: [Measurable metric, e.g., "System handles 1000 concurrent users without degradation"]
-- **SC-003**: [User satisfaction metric, e.g., "90% of users successfully complete primary task on first attempt"]
-- **SC-004**: [Business metric, e.g., "Reduce support tickets related to [X] by 50%"]
+- **SC-001**: [Measurable metric, e.g., "Responses are grounded in book content with proper citations"]
+- **SC-002**: [Measurable metric, e.g., "System handles large books (>500 pages) without performance degradation"]
+- **SC-003**: [User satisfaction metric, e.g., "90% of responses avoid hallucinations and cite source material"]
+- **SC-004**: [Performance metric, e.g., "95% of queries respond in under 2 seconds"]
+- **SC-005**: [Security metric, e.g., "API implements proper rate limiting and authentication"]
+- **SC-006**: [Usability metric, e.g., "Users can seamlessly switch between full-book and selected-text query modes"]
+
+### Constitutional Alignment
+
+- **Accuracy-First Design**: [Verify responses are grounded in source material with proper citations]
+- **Scalability Architecture**: [Verify system handles large books and concurrent users efficiently]
+- **Security-First Integration**: [Verify API key management and rate limiting implementation]
+- **User Experience Focus**: [Verify intuitive query modes and seamless integration]
+- **Performance Optimization**: [Verify response time targets and concurrent user handling]
+- **Token-Efficient Architecture**: [Verify heavy logic executes in scripts, not LLM context]

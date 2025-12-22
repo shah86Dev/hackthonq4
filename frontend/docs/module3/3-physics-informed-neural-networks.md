@@ -4,9 +4,13 @@ title: Physics-Informed Neural Networks
 sidebar_label: Physics-Informed Neural Networks
 ---
 
+import FloatingChatButton from '@site/src/components/FloatingChatButton';
+
 # Physics-Informed Neural Networks
 
 Integrating Physical Laws with Deep Learning
+
+<FloatingChatButton title="Chapter Assistant" description="Ask questions about this chapter content" />
 
 ## Learning Outcomes
 

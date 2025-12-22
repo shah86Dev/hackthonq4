@@ -4,9 +4,13 @@ title: Locomotion and Gait Control
 sidebar_label: Locomotion and Gait Control
 ---
 
+import FloatingChatButton from '@site/src/components/FloatingChatButton';
+
 # Locomotion and Gait Control
 
 Bipedal Walking and Dynamic Balance
+
+<FloatingChatButton title="Chapter Assistant" description="Ask questions about this chapter content" />
 
 ## Learning Outcomes
 

@@ -15,6 +15,11 @@
               "path": "/docs/assessments/"
             },
             {
+              "id": "chatbot/introduction",
+              "path": "/docs/chatbot/introduction",
+              "sidebar": "textbookSidebar"
+            },
+            {
               "id": "glossary",
               "path": "/docs/glossary",
               "sidebar": "textbookSidebar"

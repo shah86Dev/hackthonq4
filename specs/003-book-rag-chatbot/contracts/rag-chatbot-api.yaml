@@ -1,0 +1,336 @@
+openapi: 3.0.3
+info:
+  title: Book-Integrated RAG Chatbot API
+  description: API for the RAG chatbot that integrates with digital books to provide AI-powered answers based on book content
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+    description: Development server
+  - url: https://api.yourdomain.com
+    description: Production server
+paths:
+  /chat:
+    post:
+      summary: Process a user query against book content
+      description: Submit a question about book content, optionally with selected text as context
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserQuery'
+      responses:
+        '200':
+          description: Successful response from the RAG system
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatResponse'
+        '400':
+          description: Invalid query format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Unprocessable entity - query too complex or not in book
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /books:
+    post:
+      summary: Ingest a new book into the RAG system
+      description: Upload and process a book file for use with the RAG chatbot
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - file
+                - title
+                - author
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: The book file (PDF, DOCX, TXT, or MD format)
+                title:
+                  type: string
+                  description: Title of the book
+                  example: "Physical AI & Humanoid Robotics Textbook"
+                author:
+                  type: string
+                  description: Author of the book
+                  example: "Dr. Jane Smith"
+                language:
+                  type: string
+                  description: Language of the book (default: en)
+                  example: "en"
+      responses:
+        '200':
+          description: Book successfully ingested and processed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Book successfully ingested and processed"
+                  book_id:
+                    type: string
+                    example: "book-12345"
+                  total_chunks:
+                    type: integer
+                    example: 1250
+                  processing_time_seconds:
+                    type: number
+                    format: float
+                    example: 45.2
+        '400':
+          description: Invalid file format or missing required fields
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error during processing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /books/{book_id}:
+    get:
+      summary: Get information about a processed book
+      description: Retrieve metadata about a book that has been processed by the system
+      parameters:
+        - name: book_id
+          in: path
+          required: true
+          description: Unique identifier of the book
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Book metadata successfully retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookMetadata'
+        '404':
+          description: Book not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /health:
+    get:
+      summary: Health check endpoint
+      description: Returns the health status of the RAG chatbot service
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "healthy"
+                  timestamp:
+                    type: string
+                    format: date-time
+                    example: "2025-12-20T10:00:00Z"
+                  services:
+                    type: object
+                    properties:
+                      qdrant:
+                        type: string
+                        example: "connected"
+                      postgres:
+                        type: string
+                        example: "connected"
+                      openai:
+                        type: string
+                        example: "reachable"
+
+components:
+  schemas:
+    UserQuery:
+      type: object
+      required:
+        - question
+      properties:
+        question:
+          type: string
+          description: The user's question about the book content
+          example: "What is the main concept behind embodied cognition?"
+        selected_text:
+          type: string
+          description: Optional text selected by the user in the book viewer (takes precedence over full-book retrieval)
+          example: "Embodied cognition is the theory that cognitive processes are deeply rooted in the body's interactions with the world."
+        book_id:
+          type: string
+          description: Optional specific book ID to query (if not provided, queries all available books)
+          example: "book-12345"
+        session_id:
+          type: string
+          description: Optional session identifier for conversation context
+          example: "session-67890"
+
+    ChatResponse:
+      type: object
+      required:
+        - answer
+        - query_id
+        - grounding_confidence
+      properties:
+        answer:
+          type: string
+          description: The AI-generated answer based on book content
+          example: "Embodied cognition is the theory that cognitive processes are deeply rooted in the body's interactions with the world..."
+        query_id:
+          type: string
+          description: Unique identifier for the processed query
+          example: "query-54321"
+        citations:
+          type: array
+          description: List of book content chunks used to generate the response
+          items:
+            $ref: '#/components/schemas/Citation'
+        grounding_confidence:
+          type: number
+          format: float
+          description: Confidence score that the response is grounded in book content (0-1)
+          minimum: 0
+          maximum: 1
+          example: 0.92
+        model_used:
+          type: string
+          description: Name of the AI model used for generation
+          example: "gpt-4o"
+        response_time_ms:
+          type: integer
+          description: Time taken to process the query in milliseconds
+          example: 1250
+
+    Citation:
+      type: object
+      properties:
+        chunk_id:
+          type: string
+          description: Unique identifier of the book content chunk
+          example: "chunk-98765"
+        page_number:
+          type: integer
+          description: Page number in the original book
+          example: 45
+        section:
+          type: string
+          description: Section title where the content appears
+          example: "Chapter 3.2: Sensorimotor Coordination"
+        content_preview:
+          type: string
+          description: Brief preview of the cited content
+          example: "Embodied cognition emphasizes the role of the body in shaping cognitive processes..."
+        similarity_score:
+          type: number
+          format: float
+          description: Similarity score between query and this content chunk
+          minimum: 0
+          maximum: 1
+          example: 0.87
+
+    BookMetadata:
+      type: object
+      required:
+        - book_id
+        - title
+        - author
+        - total_pages
+        - total_chunks
+        - processing_status
+      properties:
+        book_id:
+          type: string
+          description: Unique identifier for the book
+          example: "book-12345"
+        title:
+          type: string
+          description: Title of the book
+          example: "Physical AI & Humanoid Robotics Textbook"
+        author:
+          type: string
+          description: Author of the book
+          example: "Dr. Jane Smith"
+        total_pages:
+          type: integer
+          description: Total number of pages in the book
+          example: 450
+        total_chunks:
+          type: integer
+          description: Total number of content chunks created from the book
+          example: 1250
+        processing_status:
+          type: string
+          description: Current status of book processing
+          enum: [pending, processing, completed, failed]
+          example: "completed"
+        language:
+          type: string
+          description: Language of the book
+          example: "en"
+        word_count:
+          type: integer
+          description: Total word count in the book
+          example: 125000
+        created_at:
+          type: string
+          format: date-time
+          description: When the book was first processed
+          example: "2025-12-20T09:30:00Z"
+        updated_at:
+          type: string
+          format: date-time
+          description: When the book record was last updated
+          example: "2025-12-20T09:35:00Z"
+
+    ErrorResponse:
+      type: object
+      required:
+        - error
+      properties:
+        error:
+          type: string
+          description: Error message
+          example: "Query not found in book content"
+        details:
+          type: string
+          description: Additional error details (optional)
+          example: "The requested information does not appear in the provided book content"
+        code:
+          type: string
+          description: Error code for programmatic handling
+          example: "QUERY_NOT_FOUND"

@@ -1,8 +1,6 @@
 import asyncio
 import logging
 from typing import List, Dict, Any, Optional
-from googletrans import Translator  # This is a placeholder - in production, use a proper translation API
-import requests
 import os
 
 logger = logging.getLogger(__name__)
