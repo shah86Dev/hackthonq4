@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "framework": "docusaurus",
+  "rootDirectory": "frontend",
+  "github": {
+    "enabled": true
+  }
+}
