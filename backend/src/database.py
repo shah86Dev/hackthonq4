@@ -37,4 +37,7 @@ def create_tables():
     """
     Create all tables in the database
     """
+    # Import all models to ensure they're registered with the Base
+    from .models import Book, Chunk, QueryLog, User, Chapter, LabExercise, Quiz, ContentChunk, ChatSession
+
     Base.metadata.create_all(bind=engine)

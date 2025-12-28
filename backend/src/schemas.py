@@ -156,3 +156,29 @@ class ContentChunk(ContentChunkBase):
 
     class Config:
         from_attributes = True
+
+
+# Chunk schemas for RAG functionality
+class ChunkBase(BaseModel):
+    book_id: str
+    chapter: Optional[str] = None
+    section: Optional[str] = None
+    page_range: Optional[str] = None
+    text: str
+    chunk_id: str
+    source_start_pos: int = 0
+    source_end_pos: int = 0
+
+
+class ChunkCreate(ChunkBase):
+    embedding: Optional[List[float]] = None
+
+
+class Chunk(ChunkBase):
+    id: str
+    embedding: Optional[List[float]] = None
+    created_at: Optional[datetime] = None
+    updated_at: Optional[datetime] = None
+
+    class Config:
+        from_attributes = True

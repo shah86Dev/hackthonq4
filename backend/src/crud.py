@@ -137,3 +137,66 @@ def create_content_chunk(db: Session, chunk: schemas.ContentChunkCreate):
     db.commit()
     db.refresh(db_chunk)
     return db_chunk
+
+
+# Book CRUD operations
+def get_book(db: Session, book_id: str):
+    """Get a book by its ID"""
+    from uuid import UUID
+    try:
+        uuid_obj = UUID(book_id)
+        return db.query(models.Book).filter(models.Book.id == uuid_obj).first()
+    except ValueError:
+        return None
+
+
+def book_exists(db: Session, book_id: str) -> bool:
+    """Check if a book exists by its ID"""
+    from uuid import UUID
+    try:
+        uuid_obj = UUID(book_id)
+        book = db.query(models.Book).filter(models.Book.id == uuid_obj).first()
+        return book is not None
+    except ValueError:
+        return False
+
+
+# Chunk CRUD operations
+def get_chunk(db: Session, chunk_id: str):
+    """Get a chunk by its ID"""
+    from uuid import UUID
+    try:
+        uuid_obj = UUID(chunk_id)
+        return db.query(models.Chunk).filter(models.Chunk.id == uuid_obj).first()
+    except ValueError:
+        return None
+
+
+def get_chunks_by_book(db: Session, book_id: str, skip: int = 0, limit: int = 100):
+    """Get chunks for a specific book"""
+    from uuid import UUID
+    try:
+        uuid_obj = UUID(book_id)
+        return db.query(models.Chunk).filter(models.Chunk.book_id == uuid_obj).offset(skip).limit(limit).all()
+    except ValueError:
+        return []
+
+
+def create_chunk(db: Session, chunk: schemas.ChunkCreate):
+    """Create a new chunk"""
+    from uuid import UUID
+    db_chunk = models.Chunk(
+        book_id=UUID(chunk.book_id),
+        chapter=chunk.chapter,
+        section=chunk.section,
+        page_range=chunk.page_range,
+        text=chunk.text,
+        embedding=chunk.embedding,
+        chunk_id=chunk.chunk_id,
+        source_start_pos=chunk.source_start_pos,
+        source_end_pos=chunk.source_end_pos
+    )
+    db.add(db_chunk)
+    db.commit()
+    db.refresh(db_chunk)
+    return db_chunk

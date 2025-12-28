@@ -7,12 +7,12 @@ from .config import settings
 import uvicorn
 
 
-# Create database tables
-models.Base.metadata.create_all(bind=engine)
+# Create database tables - commented out to avoid startup dependency
+# models.Base.metadata.create_all(bind=engine)
 
 # Create FastAPI app
 app = FastAPI(
-    title=settings.app_name,
+    title="Physical AI & Humanoid Robotics Textbook API",
     description="API for Physical AI & Humanoid Robotics Textbook",
     version="1.0.0",
     docs_url="/api/docs",
@@ -22,9 +22,9 @@ app = FastAPI(
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, specify exact origins
+    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000", "http://localhost:3001", "http://127.0.0.1:3001"],  # Default allowed origins
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],  # Specify allowed methods
     allow_headers=["*"],
 )
 

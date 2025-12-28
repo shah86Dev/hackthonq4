@@ -3,7 +3,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 import EmbeddedChatBot from '../EmbeddedChatBot';
 import styles from './styles.module.css';
 
-const FloatingChatButton = ({ title = "Chapter Assistant", description = "Ask questions about this chapter" }) => {
+const FloatingChatButton = ({ title = "Chapter Assistant", description = "Ask questions about this chapter", bookId = 'default-book-id' }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -28,7 +28,7 @@ const FloatingChatButton = ({ title = "Chapter Assistant", description = "Ask qu
                 </button>
               </div>
               <div className={styles.chatContent}>
-                <EmbeddedChatBot title={title} description={description} />
+                <EmbeddedChatBot title={title} description={description} bookId={bookId} />
               </div>
             </div>
           ) : (

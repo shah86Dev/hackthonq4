@@ -1,0 +1,117 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: book-rag-backend
+  namespace: default
+  labels:
+    app: book-rag-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: book-rag-backend
+  template:
+    metadata:
+      labels:
+        app: book-rag-backend
+    spec:
+      containers:
+      - name: backend
+        image: book-rag-backend:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: OPENAI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: book-rag-secrets
+              key: openai-api-key
+        - name: QDRANT_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: book-rag-secrets
+              key: qdrant-api-key
+        - name: QDRANT_HOST
+          valueFrom:
+            secretKeyRef:
+              name: book-rag-secrets
+              key: qdrant-host
+        - name: NEON_DB_URL
+          valueFrom:
+            secretKeyRef:
+              name: book-rag-secrets
+              key: neon-db-url
+        - name: DATABASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: book-rag-secrets
+              key: database-url
+        - name: SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: book-rag-secrets
+              key: secret-key
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: book-rag-frontend
+  namespace: default
+  labels:
+    app: book-rag-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: book-rag-frontend
+  template:
+    metadata:
+      labels:
+        app: book-rag-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: book-rag-frontend:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: REACT_APP_BACKEND_URL
+          value: "http://book-rag-backend-service:8000"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 20
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 5

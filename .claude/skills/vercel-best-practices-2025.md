@@ -1,0 +1,1 @@
+Current recommended settings, caching, image optimization, speed insights, security headers

@@ -1,212 +1,406 @@
 # Book-Embedded RAG Chatbot
 
-An advanced Retrieval-Augmented Generation (RAG) system designed for interactive textbook Q&A, featuring full-book and selected-text querying capabilities.
+A sophisticated Retrieval-Augmented Generation (RAG) chatbot system designed to answer questions about book content with contextual awareness and citation support.
 
-## 📋 Overview
+## Table of Contents
+- [Features](#features)
+- [Architecture](#architecture)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Development](#development)
+- [Deployment](#deployment)
+- [Troubleshooting](#troubleshooting)
 
-This project implements a state-of-the-art RAG system that allows users to interact with book content through an AI-powered chatbot. The system supports both full-book queries and selected-text interactions, providing accurate answers with proper citations.
+## Features
 
-### Key Features
-- **Full-Book RAG**: Query entire books for comprehensive answers
-- **Selected-Text RAG**: Ask questions about specific highlighted text
-- **Citation System**: Proper attribution to book sections/pages
-- **Confidence Scoring**: Quality indicators for generated answers
-- **Feedback Loop**: User rating system to improve responses
-- **Multi-Modal**: Supports PDF and text content ingestion
-- **Vector Storage**: Qdrant-powered semantic search
-- **API-First**: RESTful API design for easy integration
+### Core Capabilities
+- **Multi-Format Book Ingestion**: Support for PDF, Markdown, and plain text formats
+- **Context-Aware Question Answering**: Accurate responses grounded in book content
+- **Selected Text Context**: Prioritize user-selected text when answering questions
+- **Citation Support**: Answers include references to specific sections and pages
+- **Scalable Processing**: Handle large books (>500 pages) efficiently
+- **Distributed Processing**: Use Ray for parallel chunking and embedding
 
-## 🏗️ Architecture
+### Advanced Features
+- **Real-time Text Selection**: Integrate with book viewers for contextual questioning
+- **Rate Limiting**: Prevent abuse with configurable rate limits
+- **Performance Monitoring**: Track response times and system metrics
+- **Security Headers**: Protect against common web vulnerabilities
+- **Comprehensive Logging**: Detailed logging for debugging and monitoring
 
+## Architecture
+
+### System Components
 ```
-┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
-│   Frontend      │    │    Backend       │    │   Vector DB     │
-│  (Docusaurus)   │───▶│    (FastAPI)     │───▶│   (Qdrant)      │
-│                 │    │                  │    │                 │
-│  - Chat UI      │    │  - API Gateway   │    │  - Semantic     │
-│  - Book Viewer  │    │  - Query Logic   │    │    Search       │
-│  - Citations    │    │  - Ingestion     │    │  - Embeddings   │
-└─────────────────┘    │  - Authentication│    └─────────────────┘
-                       │  - Logging       │
-                       └──────────────────┘
-                                │
+┌─────────────────┐    ┌──────────────────┐    ┌──────────────────┐
+│   Frontend      │────│   FastAPI        │────│  Qdrant Vector   │
+│   Components    │    │   Backend        │    │  Store           │
+└─────────────────┘    └──────────────────┘    └──────────────────┘
+                              │
                        ┌──────────────────┐
-                       │   Database       │
-                       │                  │
-                       │ - PostgreSQL     │
-                       │ - Query Logs     │
-                       │ - Answers        │
-                       │ - Feedback       │
+                       │   PostgreSQL     │
+                       │   Metadata       │
+                       └──────────────────┘
+                              │
+                       ┌──────────────────┐
+                       │   OpenAI API     │
+                       │   (Embeddings &  │
+                       │   Generation)    │
                        └──────────────────┘
 ```
 
-## 📁 Project Structure
+### Tech Stack
+- **Backend**: FastAPI with Python 3.11+
+- **Vector Store**: Qdrant Cloud for semantic search
+- **Database**: PostgreSQL (Neon) for metadata storage
+- **Embeddings**: OpenAI text-embedding-ada-002
+- **Generation**: OpenAI GPT-4o
+- **Frontend**: React components with embedding capability
+- **Orchestration**: Ray for distributed processing
+- **Deployment**: Docker & Kubernetes with Dapr
 
-```
-book-rag-chatbot/
-├── backend/                 # FastAPI backend server
-│   ├── src/
-│   │   ├── api/            # API endpoints (ingest, query, health, chat)
-│   │   ├── models/         # Database models (Book, Chunk, Answer, etc.)
-│   │   ├── services/       # Business logic (Ingestion, Retrieval, Generation)
-│   │   ├── config/         # Configuration settings
-│   │   └── database.py     # Database connection
-│   ├── requirements.txt    # Python dependencies
-│   └── .env               # Environment variables
-├── frontend/               # Docusaurus frontend
-│   ├── src/
-│   │   ├── components/     # React components (ChatBot, EmbeddedChatBot)
-│   │   ├── pages/         # React pages
-│   │   └── css/           # Styling
-│   ├── docs/              # Book content and documentation
-│   └── docusaurus.config.js # Frontend configuration
-├── specs/                  # Project specifications
-│   └── 003-book-rag-chatbot/
-├── history/                # Project history and prompts
-└── README.md              # Project documentation
-```
-
-## 🚀 Quick Start
+## Installation
 
 ### Prerequisites
 - Python 3.11+
-- Node.js 18+
-- Docker (for Qdrant)
+- Docker and Docker Compose
+- OpenAI API key
+- Qdrant Cloud account
+- PostgreSQL/Neon database
 
-### Installation
+### Local Setup
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd book-rag-chatbot
-   ```
-
-2. **Set up backend**
-   ```bash
-   cd backend
-   pip install -r requirements.txt
-   ```
-
-3. **Configure environment**
-   ```bash
-   cp .env.example .env
-   # Edit .env with your OpenAI and Qdrant keys
-   ```
-
-4. **Start backend server**
-   ```bash
-   python -m uvicorn src.api.main:app --host 0.0.0.0 --port 8000 --reload
-   ```
-
-5. **Set up and start frontend**
-   ```bash
-   cd ../frontend
-   npm install
-   npm start
-   ```
-
-6. **Access the application**
-   - Frontend: http://localhost:3000
-   - Backend API: http://localhost:8000
-   - API Docs: http://localhost:8000/docs
-
-## 🔧 API Endpoints
-
-### Ingestion
-- `POST /api/v1/ingest/book` - Ingest a book into the RAG system
-
-### Query
-- `POST /api/v1/query` - Query book content (full-book or selected-text mode)
-
-### Upload
-- `POST /api/v1/upload/book` - Upload and process a book file
-
-### Health Check
-- `GET /api/v1/health` - Health check endpoint
-
-## 💡 Usage Examples
-
-### Query a Book
+1. Clone the repository:
 ```bash
-curl -X POST "http://localhost:8000/api/v1/query" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "book_id": "your-book-uuid",
-    "question": "What is the main concept discussed in this book?",
-    "mode": "full-book"
-  }'
+git clone https://github.com/your-username/book-rag-chatbot.git
+cd book-rag-chatbot
 ```
 
-### Query with Selected Text
+2. Install Python dependencies:
 ```bash
-curl -X POST "http://localhost:8000/api/v1/query" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "book_id": "your-book-uuid",
-    "question": "Explain this concept further",
-    "mode": "selected-text",
-    "selected_text": "The concept of embodied cognition..."
-  }'
+pip install -r backend/requirements.txt
 ```
 
-## 🤖 Technologies Used
+3. Install frontend dependencies:
+```bash
+cd frontend
+npm install
+```
 
-- **Backend**: FastAPI, Python 3.11
-- **Frontend**: Docusaurus, React, JavaScript
-- **Database**: PostgreSQL (relational), Qdrant (vector)
-- **AI/ML**: OpenAI API, Sentence Transformers
-- **API Documentation**: Swagger/OpenAPI
-- **Deployment**: Docker, Vercel
+4. Set up environment variables:
+```bash
+cp backend/.env.example backend/.env
+# Edit backend/.env with your API keys and configuration
+```
 
-## 📊 Data Models
+### Environment Variables
 
-### QueryLog
-- Tracks all user queries with metadata (book_id, mode, question, latency, tokens)
+Create a `.env` file in the `backend` directory with the following variables:
 
-### Answer
-- Stores generated answers with citations and confidence scores
+```env
+# OpenAI Configuration
+OPENAI_API_KEY=your_openai_api_key_here
+OPENAI_MODEL=gpt-4o
+EMBEDDING_MODEL=text-embedding-ada-002
 
-### Feedback
-- User ratings and corrections to improve response quality
+# Qdrant Configuration
+QDRANT_URL=your_qdrant_url
+QDRANT_API_KEY=your_qdrant_api_key
+QDRANT_COLLECTION_NAME=book_content
 
-## 🚀 Deployment
+# Database Configuration
+NEON_DB_URL=postgresql://username:password@ep-xxxxxxx.us-east-1.aws.neon.tech/dbname
 
-The application is designed for easy deployment to cloud platforms:
+# Application Settings
+DEBUG=False
+SECRET_KEY=your_secret_key_here
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
 
-### Vercel (Frontend)
-- Connect your GitHub repository to Vercel
-- Set environment variables for backend URL
+# Rate Limiting
+RATE_LIMIT_REQUESTS=100
+RATE_LIMIT_WINDOW=3600
 
-### Backend Deployment
-- Deploy using Docker containers
-- Configure with environment variables
-- Set up SSL certificates for production
+# Chunking Settings
+CHUNK_SIZE=1000
+CHUNK_OVERLAP=200
+TOP_K_CHUNKS=5
 
-## 📈 Performance Metrics
+# Security
+ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
+```
 
-- **Latency**: Query response times tracked in logs
-- **Token Usage**: API cost optimization tracking
-- **Confidence Scores**: Answer quality indicators
-- **User Feedback**: Continuous improvement loop
+## Configuration
 
-## 🤝 Contributing
+### Application Settings
+
+The application can be configured through environment variables in the `.env` file:
+
+- `DEBUG`: Enable/disable debug mode
+- `CHUNK_SIZE`: Size of text chunks (500-1000 chars recommended)
+- `CHUNK_OVERLAP`: Overlap between chunks (200 chars recommended)
+- `TOP_K_CHUNKS`: Number of chunks to retrieve for context (default: 5)
+- `MAX_BOOK_SIZE`: Maximum book size in characters (default: 1,000,000)
+- `RATE_LIMIT_REQUESTS`: Requests allowed per window
+- `RATE_LIMIT_WINDOW`: Time window in seconds for rate limiting
+
+### Docker Configuration
+
+Use the provided `docker-compose.yml` for local development:
+
+```yaml
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - QDRANT_API_KEY=${QDRANT_API_KEY}
+      - QDRANT_HOST=${QDRANT_HOST}
+      - NEON_DB_URL=${NEON_DB_URL}
+    depends_on:
+      - qdrant
+    networks:
+      - rag_network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - rag_network
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    environment:
+      - QDRANT_API_KEY=${QDRANT_API_KEY}
+    networks:
+      - rag_network
+
+volumes:
+  qdrant_data:
+
+networks:
+  rag_network:
+    driver: bridge
+```
+
+## Usage
+
+### Running Locally
+
+1. Start the backend:
+```bash
+cd backend
+uvicorn src.main:app --reload --host 0.0.0.0 --port 8000
+```
+
+2. Start the frontend (in a separate terminal):
+```bash
+cd frontend
+npm start
+```
+
+### API Endpoints
+
+#### Chat Endpoint
+```
+POST /api/v1/chat
+```
+
+Request Body:
+```json
+{
+  "question": "What is the main theme of this book?",
+  "selected_text": "Optional selected text for context",
+  "book_id": "book-uuid",
+  "session_id": "optional-session-id",
+  "language": "en"
+}
+```
+
+Response:
+```json
+{
+  "response": "The main theme of this book is...",
+  "source_chunks": [
+    {
+      "text": "Relevant text from the book",
+      "section": "Chapter 1",
+      "page_range": "1-5"
+    }
+  ],
+  "session_id": "session-uuid",
+  "confidence_score": 0.85,
+  "response_time_ms": 1200,
+  "tokens_used": 150
+}
+```
+
+#### Ingestion Endpoint
+```
+POST /api/v1/ingest
+```
+
+Upload a book file (PDF, Markdown, or TXT) to process and store for RAG.
+
+#### Health Check
+```
+GET /health
+```
+
+Returns system health status.
+
+### Embedding the Chatbot
+
+The chatbot can be embedded in any web page using the provided JavaScript snippet:
+
+```html
+<!-- Embed the chatbot -->
+<div id="book-rag-chatbot"></div>
+
+<script>
+  // Load the chatbot script
+  const script = document.createElement('script');
+  script.src = '/path/to/chatbot-embed.js';
+  script.onload = function() {
+    // Initialize the chatbot
+    window.BookRagEmbedder.init({
+      bookId: 'your-book-id',
+      apiUrl: 'http://localhost:8000',
+      title: 'Book Assistant',
+      theme: 'light'
+    });
+  };
+  document.head.appendChild(script);
+</script>
+```
+
+## Development
+
+### Running Tests
+
+Unit tests:
+```bash
+cd backend
+python -m pytest tests/unit/
+```
+
+Integration tests:
+```bash
+cd backend
+python -m pytest tests/integration/
+```
+
+Acceptance tests:
+```bash
+cd backend
+python -m pytest tests/acceptance/
+```
+
+### Code Structure
+
+```
+backend/
+├── src/
+│   ├── api/                 # API endpoints
+│   ├── models/              # Database models
+│   ├── services/            # Business logic
+│   ├── agents/              # AI agents
+│   ├── config/              # Configuration
+│   ├── utils/               # Utility functions
+│   └── main.py              # Application entry point
+├── tests/                   # Test suite
+├── requirements.txt         # Python dependencies
+└── Dockerfile               # Docker configuration
+
+frontend/
+├── src/
+│   ├── components/          # React components
+│   ├── services/            # Frontend services
+│   └── utils/               # Utility functions
+├── package.json             # Node.js dependencies
+└── Dockerfile               # Docker configuration
+```
+
+## Deployment
+
+### Kubernetes
+
+Deploy using the provided Kubernetes manifests:
+
+```bash
+kubectl apply -f shared/k8s/deployment.yaml
+kubectl apply -f shared/k8s/service.yaml
+```
+
+### Dapr Integration
+
+The application supports Dapr for service discovery and state management:
+
+```yaml
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: book-rag-statestore
+spec:
+  type: state.redis
+  version: v1
+  metadata:
+  - name: redisHost
+    value: redis-master:6379
+```
+
+## Troubleshooting
+
+### Common Issues
+
+1. **API Connection Errors**: Verify your OpenAI and Qdrant API keys are correct
+2. **Rate Limiting**: Check your OpenAI usage and upgrade if necessary
+3. **Memory Issues**: Large books may require increased memory allocation
+4. **CORS Errors**: Ensure allowed origins are configured correctly
+
+### Logging
+
+The application logs to both console and file. Check the `logs/` directory for detailed logs.
+
+### Performance
+
+For large books (>500 pages), ensure you have sufficient resources and consider using the distributed processing capabilities with Ray.
+
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Make your changes
-4. Commit your changes (`git commit -m 'Add some amazing feature'`)
-5. Push to the branch (`git push origin feature/amazing-feature`)
-6. Open a Pull Request
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🎯 Project Goals
+## Support
 
-- Enable interactive learning through AI-powered textbook Q&A
-- Provide accurate citations for all generated answers
-- Support multiple query modes (full-book and selected-text)
-- Create a feedback loop for continuous improvement
-- Maintain high performance and reliability standards
+For support, please open an issue in the GitHub repository or contact the maintainers.
+
+---
+
+Built with ❤️ for enhancing the reading experience with AI-powered assistance.
  

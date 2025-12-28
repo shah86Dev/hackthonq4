@@ -12,7 +12,7 @@ class Settings(BaseSettings):
 
     # OpenAI settings
     openai_api_key: str
-    openai_model: str = "gpt-3.5-turbo"
+    openai_model: str = "gpt-4o"
     embedding_model: str = "text-embedding-ada-002"
 
     # Application settings

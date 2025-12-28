@@ -1,0 +1,37 @@
+apiVersion: dapr.io/v1alpha1
+kind: Configuration
+metadata:
+  name: book-rag-config
+spec:
+  tracing:
+    samplingRate: "1"
+    zipkin:
+      endpointAddress: "http://zipkin.default.svc.cluster.local:9411/api/v1/spans"
+  features:
+    - name: InputBinding
+      enabled: true
+    - name: OutputBinding
+      enabled: true
+    - name: PubSub
+      enabled: true
+    - name: StateStore
+      enabled: true
+    - name: SecretStore
+      enabled: true
+---
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: book-rag-statestore
+spec:
+  type: state.redis
+  version: v1
+  metadata:
+  - name: redisHost
+    value: redis-master:6379
+  - name: redisPassword
+    secretKeyRef:
+      name: redis
+      key: password
+auth:
+  secretStore: kubernetes

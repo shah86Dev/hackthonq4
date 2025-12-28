@@ -2,13 +2,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import styles from './styles.module.css';
 
-const ChatBot = () => {
+const ChatBot = ({ bookId = 'default-book-id' }) => {
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [sessionId, setSessionId] = useState(() => {
     const saved = localStorage.getItem('chatSessionId');
-    return saved ? JSON.parse(saved) : Date.now().toString();
+    return saved ? JSON.parse(saved) : crypto.randomUUID();
   });
   const [selectedText, setSelectedText] = useState('');
 
@@ -51,7 +51,7 @@ const ChatBot = () => {
     e.preventDefault();
     if (!inputValue.trim() || isLoading) return;
 
-    const userMessage = { id: Date.now(), content: inputValue, role: 'user' };
+    const userMessage = { id: crypto.randomUUID(), content: inputValue, role: 'user' };
     setMessages(prev => [...prev, userMessage]);
     setInputValue('');
     setIsLoading(true);
@@ -69,7 +69,7 @@ const ChatBot = () => {
           selected_text: selectedText || null,  // Send selected text if available
           session_id: sessionId,
           language: 'en',
-          book_id: '12345678-1234-5678-1234-567812345678'  // Default book ID
+          book_id: bookId
         }),
       });
 
@@ -80,7 +80,7 @@ const ChatBot = () => {
       const data = await response.json();
 
       const botMessage = {
-        id: Date.now() + 1,
+        id: crypto.randomUUID(),
         content: data.response,
         role: 'assistant',
         sources: data.source_chunks
@@ -90,7 +90,7 @@ const ChatBot = () => {
     } catch (error) {
       console.error('Error getting response from chatbot:', error);
       const errorMessage = {
-        id: Date.now() + 1,
+        id: crypto.randomUUID(),
         content: 'Sorry, I encountered an error processing your request. Please try again.',
         role: 'assistant'
       };
@@ -199,10 +199,10 @@ const ChatBot = () => {
   );
 };
 
-const ChatBotWrapper = () => {
+const ChatBotWrapper = (props) => {
   return (
     <BrowserOnly>
-      {() => <ChatBot />}
+      {() => <ChatBot {...props} />}
     </BrowserOnly>
   );
 };

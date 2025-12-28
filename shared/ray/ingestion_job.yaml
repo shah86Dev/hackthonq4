@@ -1,0 +1,46 @@
+# Ray job configuration for distributed book ingestion
+# This configuration defines how to run the ingestion service with Ray for distributed processing
+
+runtime_env:
+  pip:
+    - openai==1.3.5
+    - qdrant-client==1.8.0
+    - PyPDF2==3.0.1
+    - markdown==3.5.1
+    - python-dotenv==1.0.0
+    - sqlalchemy==2.0.23
+    - psycopg2-binary==2.9.9
+    - ray[default]==2.9.0
+
+working_dir: ./backend
+
+# Job submission parameters
+entrypoint: python -m src.services.ingestion_service_ray_worker
+job_timeout: 3600  # 1 hour timeout
+num_workers: 4
+max_retries: 3
+
+# Ray cluster configuration
+cluster_config:
+  cluster_name: "book-ingestion-cluster"
+  min_workers: 1
+  max_workers: 10
+  initial_workers: 2
+  autoscaling_mode: "default"
+  idle_timeout_minutes: 5
+
+  # Worker node configuration
+  worker_nodes:
+    resources: {"CPU": 2, "memory": 4e9}  # 2 CPUs, 4GB memory
+
+  # Head node configuration
+  head_node:
+    resources: {"CPU": 4, "memory": 8e9}  # 4 CPUs, 8GB memory
+
+# Environment variables for the ingestion service
+env_vars:
+  OPENAI_API_KEY: {env:OPENAI_API_KEY}
+  QDRANT_API_KEY: {env:QDRANT_API_KEY}
+  QDRANT_HOST: {env:QDRANT_HOST}
+  NEON_DB_URL: {env:NEON_DB_URL}
+  RAY_ADDRESS: "auto"

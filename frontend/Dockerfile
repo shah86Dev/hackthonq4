@@ -1,23 +1,23 @@
-# Use Node.js base image
+# Use Node 18 as base image
 FROM node:18-alpine
 
 # Set working directory
 WORKDIR /app
 
-# Copy package files
-COPY package.json yarn.lock* ./
+# Copy package.json and package-lock.json (if available)
+COPY package*.json ./
 
 # Install dependencies
-RUN yarn install --frozen-lockfile
+RUN npm ci --only=production
 
 # Copy the rest of the application
 COPY . .
 
 # Build the application
-RUN yarn build
+RUN npm run build
 
 # Expose port
 EXPOSE 3000
 
-# Run the application
-CMD ["yarn", "serve", "--host", "0.0.0.0", "--port", "3000"]
+# Start the application
+CMD ["npm", "start"]

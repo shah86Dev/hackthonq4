@@ -9,7 +9,9 @@
       "Bash(if Test-Path \"specs/003-book-rag-chatbot/checklists\")",
       "Bash(then Get-ChildItem \"specs/003-book-rag-chatbot/checklists\" -Recurse -File)",
       "Bash(else Write-Host \"No checklists directory found\")",
-      "Bash(fi)"
+      "Bash(fi)",
+      "Bash(python -m pytest test_rate_limit_unit.py -v)",
+      "Bash(python -m pytest test_rate_limit_unit.py::test_rate_limit_key_function -v)"
     ]
   }
 }
