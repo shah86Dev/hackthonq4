@@ -1,0 +1,87 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+env.bak/
+venv.bak/
+.venv.bak/
+
+# Virtual Environment
+ENV/
+.ENV/
+
+# Environment variables
+.env*
+.env.local
+.env.dev
+.env.production
+
+# Git
+.git/
+.gitignore
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Coverage directory used by tools like istanbul
+coverage/
+lib-cov/
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Docusaurus build outputs
+frontend/build/
+frontend/.docusaurus/
+frontend/.cache/
+
+# Backend
+backend/__pycache__/
+backend/*.pyc
+backend/.venv/
+backend/venv/
+
+# Frontend
+chatbot/node_modules/
+chatbot/dist/
+chatbot/.nyc_output
+chatbot/coverage/
+chatbot/nyc_output/
+
+# Static files directory
+static/
+
+# Cache
+.cache/
+
+# Runtime
+.pyc
+.pyo
+.pycache__
+__pycache__/
+
+# Docker build context
+Dockerfile*
+.dockerignore
+
+# Ignore other docker files
+.docker/

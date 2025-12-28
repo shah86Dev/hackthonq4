@@ -3,7 +3,7 @@ from openai import OpenAI
 from src.config.settings import settings
 import logging
 import time
-from src.models.query_log import QueryLog, QueryLogCreate
+from src.models.query_log import QueryLog
 
 logger = logging.getLogger(__name__)
 

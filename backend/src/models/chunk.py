@@ -18,7 +18,7 @@ class Chunk(Base):
     text = Column(Text, nullable=False)  # The actual text content of the chunk
     embedding = Column(JSON)  # Store embedding as JSON array for Neon compatibility
     position = Column(Integer, nullable=False)  # Sequential position in the book
-    metadata = Column(JSON)  # Additional metadata (word count, etc.)
+    chunk_metadata = Column(JSON)  # Additional metadata (word count, etc.)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 
@@ -34,7 +34,7 @@ class BookChunkPydantic(BaseModel):
     section: Optional[str] = Field(None, description="Section/chapter title")
     position: int = Field(..., ge=1, description="Sequential position in the book")
     embedding_vector: List[float] = Field(..., description="Embedding vector for semantic search")
-    metadata: Optional[dict] = Field(None, description="Additional metadata (word count, etc.)")
+    chunk_metadata: Optional[dict] = Field(None, description="Additional metadata (word count, etc.)")
 
     class Config:
         json_schema_extra = {
@@ -46,7 +46,7 @@ class BookChunkPydantic(BaseModel):
                 "section": "Chapter 3: Introduction",
                 "position": 1,
                 "embedding_vector": [0.1, 0.2, 0.3],  # Simplified example
-                "metadata": {"word_count": 150}
+                "chunk_metadata": {"word_count": 150}
             }
         }
 
@@ -60,7 +60,7 @@ class BookChunkCreate(BaseModel):
     page_number: Optional[int] = Field(None, ge=1, description="Page number in the original book")
     section: Optional[str] = Field(None, description="Section/chapter title")
     position: int = Field(..., ge=1, description="Sequential position in the book")
-    metadata: Optional[dict] = Field(None, description="Additional metadata (word count, etc.)")
+    chunk_metadata: Optional[dict] = Field(None, description="Additional metadata (word count, etc.)")
 
 
 class BookChunkResponse(BaseModel):
@@ -73,7 +73,7 @@ class BookChunkResponse(BaseModel):
     page_number: Optional[int]
     section: Optional[str]
     position: int
-    metadata: Optional[dict]
+    chunk_metadata: Optional[dict]
     created_at: datetime
 
     class Config:
@@ -85,7 +85,7 @@ class BookChunkResponse(BaseModel):
                 "page_number": 25,
                 "section": "Chapter 3: Introduction",
                 "position": 1,
-                "metadata": {"word_count": 150},
+                "chunk_metadata": {"word_count": 150},
                 "created_at": "2023-10-01T12:00:00Z"
             }
         }
