@@ -341,6 +341,36 @@ frontend/
 
 ## Deployment
 
+### Vercel (Recommended)
+
+The project is configured for easy deployment on Vercel with a monorepo setup:
+
+1. **Frontend**: Docusaurus static site served at root (`/*`)
+2. **Backend**: FastAPI API served at `/api/*`
+
+#### Quick Deploy to Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-username/your-repo-name)
+
+#### Environment Variables Required
+
+- `OPENAI_API_KEY` - OpenAI API key for embeddings and generation
+- `QDRANT_API_KEY` - Qdrant vector database API key
+- `QDRANT_HOST` - Qdrant database host URL
+- `DATABASE_URL` - Database connection string
+- `NEON_DB_URL` - Neon Postgres connection string
+- `SECRET_KEY` - Secret key for security
+
+#### Vercel Configuration (`vercel.json`)
+
+The project includes a pre-configured `vercel.json` that:
+- Builds the Docusaurus frontend using `@vercel/static-build`
+- Deploys the FastAPI backend using `@vercel/python`
+- Routes API requests to `/api/*` to the backend
+- Serves all other requests to the frontend
+
+See [VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md) for detailed deployment instructions.
+
 ### Kubernetes
 
 Deploy using the provided Kubernetes manifests:

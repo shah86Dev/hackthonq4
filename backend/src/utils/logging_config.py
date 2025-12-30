@@ -5,12 +5,43 @@ import os
 from datetime import datetime
 import json
 from typing import Dict, Any
-import structlog
-from pythonjsonlogger import jsonlogger
+
+# Optional import for pythonjsonlogger
+try:
+    from pythonjsonlogger import jsonlogger
+    PYTHONJSONLOGGER_AVAILABLE = True
+except ImportError:
+    PYTHONJSONLOGGER_AVAILABLE = False
+    # Create a simple fallback formatter if pythonjsonlogger is not available
+    class SimpleJsonFormatter(logging.Formatter):
+        def format(self, record):
+            log_entry = {
+                'timestamp': datetime.utcnow().isoformat(),
+                'level': record.levelname,
+                'logger': record.name,
+                'message': record.getMessage(),
+            }
+            if hasattr(record, 'funcName'):
+                log_entry['function'] = record.funcName
+            if hasattr(record, 'lineno'):
+                log_entry['line'] = record.lineno
+            return json.dumps(log_entry)
+
+    jsonlogger = None
+
+# Optional import for structlog
+try:
+    import structlog
+    STRUCTLOG_AVAILABLE = True
+except ImportError:
+    STRUCTLOG_AVAILABLE = False
 
 # Set up structlog configuration
 def setup_structured_logging():
     """Set up structured logging for the application"""
+    if not STRUCTLOG_AVAILABLE:
+        # Fallback to standard logging if structlog is not available
+        return get_logger("structlog_fallback")
 
     # Configure processor chain for structlog
     processors = [
@@ -52,10 +83,13 @@ def setup_logging(log_level: str = "INFO", log_file: str = "app.log"):
         os.makedirs(log_dir)
 
     # Create formatters
-    json_formatter = jsonlogger.JsonFormatter(
-        '%(asctime)s %(name)s %(levelname)s %(message)s',
-        rename_fields={'asctime': 'timestamp', 'name': 'logger', 'levelname': 'level'}
-    )
+    if PYTHONJSONLOGGER_AVAILABLE:
+        json_formatter = jsonlogger.JsonFormatter(
+            '%(asctime)s %(name)s %(levelname)s %(message)s',
+            rename_fields={'asctime': 'timestamp', 'name': 'logger', 'levelname': 'level'}
+        )
+    else:
+        json_formatter = SimpleJsonFormatter()
 
     standard_formatter = logging.Formatter(
         '%(asctime)s - %(name)s - %(levelname)s - %(message)s'

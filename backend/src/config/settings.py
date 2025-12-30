@@ -46,8 +46,17 @@ class Settings(BaseSettings):
     allowed_origins: list[str] = [
         "http://localhost:3000",
         "http://127.0.0.1:3000",
-        "http://localhost:8000",
-        "http://127.0.0.1:8000"
+        "http://localhost:8001",
+        "http://127.0.0.1:8001",
+        "http://localhost:3004",  # Docusaurus default
+        "http://127.0.0.1:3004",
+        "http://localhost:3001",  # Additional common port
+        "http://127.0.0.1:3001",
+        "http://localhost:5173",  # Vite default
+        "http://127.0.0.1:5173",
+        "http://localhost:3002",  # Additional common port
+        "http://127.0.0.1:3002",
+        "*"  # Allow all origins for development - should be restricted in production
     ]  # Default for development
 
     # Ray settings for distributed processing

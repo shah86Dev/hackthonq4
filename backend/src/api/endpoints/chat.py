@@ -9,10 +9,10 @@ from src.services.generation_service import GenerationService
 from src.services.citation_service import CitationService
 from src.models.query_log import QueryLog
 from pydantic import BaseModel
-from slowapi import Limiter, _limiter, limit
-from slowapi.util import get_remote_address
+from slowapi import limit
 from src.config.settings import settings
 from fastapi import Request
+from src.api.middleware import limiter
 
 
 router = APIRouter()
@@ -32,35 +32,15 @@ class ChatResponse(BaseModel):
     session_id: str
 
 
-from slowapi import Limiter
-from slowapi.util import get_remote_address
 from src.config.settings import settings
 
 @router.post("/chat", response_model=ChatResponse)
-@limit(f"{settings.rate_limit_requests}/hour")  # Session-based rate limiting (default)
+@limiter.limit(f"{settings.rate_limit_requests}/hour")  # Use the imported limiter
 async def chat_endpoint(request: ChatRequest, db: Session = Depends(get_db), fastapi_request: Request = None):
     """
     Main chat endpoint for the book RAG chatbot
     This endpoint matches the frontend expectations and implements the spec requirements.
     """
-    # Apply dual rate limiting: both per-session and per-IP to prevent bypass
-    if fastapi_request:
-        # Get IP address for IP-based rate limiting
-        client_ip = get_remote_address(fastapi_request)
-
-        # Create rate limit keys for both session and IP
-        session_key = f"session:{request.session_id or 'none'}:/api/v1/chat"
-        ip_key = f"ip:{client_ip}:/api/v1/chat"
-
-        # For dual rate limiting, we need to use a different approach with slowapi
-        # since it's designed to work with decorators. We'll implement manual checks.
-        # However, for the correct slowapi integration, we'll need to use a decorator approach
-        # that applies both limits. For now, we'll use the app's configured limiters.
-
-        # Access the app's rate limiters that were set in middleware
-        app_limiter = fastapi_request.app.state.limiter
-        ip_limiter = fastapi_request.app.state.ip_limiter
-
     start_time = datetime.utcnow()
 
     try:

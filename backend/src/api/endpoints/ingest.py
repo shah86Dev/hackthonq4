@@ -8,11 +8,11 @@ from src.database import get_db
 from src.services.ingestion_service import IngestionService
 from src.models.book import Book
 from pydantic import BaseModel
-from slowapi import Limiter, limit
-from slowapi.util import get_remote_address
 from src.config.settings import settings
 from fastapi import Request
 import logging
+from src.api.middleware import limiter
+from slowapi.util import get_remote_address
 
 logger = logging.getLogger(__name__)
 
@@ -43,8 +43,6 @@ class IngestResponse(BaseModel):
     message: str
 
 
-# Initialize rate limiter
-limiter = Limiter(key_func=get_remote_address)
 
 
 @router.post("/ingest/book")
@@ -76,7 +74,7 @@ async def ingest_book(request: IngestBookRequest, db: Session = Depends(get_db))
 
 
 @router.post("/ingest", response_model=IngestResponse)
-@limit(f"{settings.rate_limit_requests}/hour")  # Apply rate limiting
+@limiter.limit(f"{settings.rate_limit_requests}/hour")  # Apply rate limiting
 async def ingest_endpoint(
     request: Request,  # For rate limiting
     file: UploadFile = File(...),
@@ -195,7 +193,7 @@ async def ingest_endpoint(
 
 
 @router.post("/ingest-text", response_model=IngestResponse)
-@limit(f"{settings.rate_limit_requests}/hour")  # Apply rate limiting
+@limiter.limit(f"{settings.rate_limit_requests}/hour")  # Apply rate limiting
 async def ingest_text_endpoint(
     request: Request,  # For rate limiting
     ingest_request: IngestRequest,

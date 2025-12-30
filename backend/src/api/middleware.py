@@ -1,6 +1,7 @@
 from fastapi import Request, HTTPException, status, Depends
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional, Dict, Any
 import jwt
 import time
@@ -12,6 +13,8 @@ from src.utils.error_handlers import AppException, ErrorCode
 from src.utils.logging_config import log_audit_event
 import hashlib
 import secrets
+from slowapi import Limiter
+from slowapi.util import get_remote_address
 
 logger = logging.getLogger(__name__)
 
@@ -251,6 +254,12 @@ class RateLimiter:
 # Global rate limiter instance
 rate_limiter = RateLimiter()
 
+# SlowAPI limiter for rate limiting
+limiter = Limiter(key_func=get_remote_address)
+
+# Session-based rate limiter
+session_limiter = Limiter(key_func=lambda: "session")  # Will be customized per session
+
 
 async def rate_limit_middleware(request: Request, call_next):
     """
@@ -363,4 +372,55 @@ require_admin = require_role("admin")
 require_user = require_role("user")
 
 
+def add_rate_limiting_middleware(app):
+    """
+    Add rate limiting middleware to the app and set up limiters in app state
+    """
+    # Register the slowapi exception handler
+    from slowapi.errors import RateLimitExceeded
+    from slowapi import _rate_limit_exceeded_handler
+
+    app.state.limiter = limiter
+    app.state.ip_limiter = limiter
+
+    # Add the rate limit exceeded handler
+    app.exception_handler(RateLimitExceeded)(_rate_limit_exceeded_handler)
+
+    # Add the slowapi limiter to the app
+    app.state.limiter = limiter
+
+    return app
+
+
+def add_middleware(app):
+    """
+    Add all middleware to the FastAPI app, including CORS and security middleware
+    """
+    # Add rate limiting middleware first
+    app = add_rate_limiting_middleware(app)
+
+    # Add CORS middleware - This is critical for frontend communication
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=settings.allowed_origins,  # Use origins from settings
+        allow_credentials=True,
+        allow_methods=["*"],  # Allow all HTTP methods
+        allow_headers=["*"],  # Allow all headers
+        # Additional CORS options
+        expose_headers=["Access-Control-Allow-Origin", "X-RateLimit-Limit", "X-RateLimit-Remaining", "X-RateLimit-Reset"],
+        max_age=86400,  # Cache preflight requests for 24 hours
+    )
+
+    # Add security headers middleware
+    app.add_middleware(SecurityMiddleware)
+
+    # Add rate limiting middleware
+    app.middleware("http")(rate_limit_middleware)
+
+    return app
+
+
 logger.info("Security middleware initialized")
+
+# Export limiter for use in other modules
+__all__ = ["add_middleware", "add_rate_limiting_middleware", "limiter", "rate_limiter", "require_auth", "get_current_user", "create_user_token"]
